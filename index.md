@@ -5,14 +5,9 @@ tagline: A collage of ranting, painting and programming
 ---
 {% include JB/setup %}
 
-## Ranting
-At the world in general, but more specifically about politics, society and technology.
-
-## Painting
-Of miniatures in the Game Workshop style.
-
-## Programming
-On personal projects in a number of languages, expounding opinions on style.
+---
+> ## It's those stripping our freedoms that are the real terrorists; Polititians and the corporations and corruption behind them. Militants are trivial, transient and ineffective. The loss of freedom and privacy is scarier than any bomb.
+---
 
 # Blog Posts
 <ul class="posts">

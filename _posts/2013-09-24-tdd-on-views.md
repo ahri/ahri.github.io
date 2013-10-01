@@ -3,7 +3,7 @@ layout: post
 title: "TDD on Views"
 description: ""
 category: "programming"
-tags: ["tdd", "programming"]
+tags: ["tdd"]
 ---
 {% include JB/setup %}
 

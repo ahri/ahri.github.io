@@ -3,7 +3,7 @@ layout: post
 title: "LibGDX on iOS!"
 description: ""
 category: "Programming"
-tags: ["programming", "gamedev"]
+tags: ["gamedev", "portable"]
 ---
 {% include JB/setup %}
 

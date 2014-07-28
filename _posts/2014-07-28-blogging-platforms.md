@@ -7,7 +7,7 @@ tags: []
 ---
 {% include JB/setup %}
 
-A pretty general title, but I've been putting some thought into it. It's one of those projects I'd like to do at some point that isn't now. I'll call them [scribbles](/scribbles/).
+A pretty general title, but I've been putting some thought into it. It's one of those projects I'd like to do at some point that isn't now. I'll call them [scribbles](/categories.html#scribbles-ref).
 
 So what I'm thinking is that while I like editing in vim, it doesn't quite suit me as a blogging environment. To be clear I suppose that text editors don't suit me as blogging environments and I'd prefer to see what I'm doing as I'm doing it. [Ghost](http://ghost.org) is pretty nice, but I haven't put much time into understanding its way of doing things, and having gotten into [Jekyll](http://jekyllrb.com) and just pushing up to github I think I'd miss the transparency of the approach.
 

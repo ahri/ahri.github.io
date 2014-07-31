@@ -31,6 +31,6 @@ I'd like something that can mix up a few bits and pieces, and since I think in t
 
 * A nice text editor that support vim key bindings
 
-  Bwecause why would you want to type any other way? ;)
+  Because why would you want to type any other way? ;)
 
 I might code something up sometime, perhaps with a mixture of nodejs, event sourcing and some other bits and pieces. Of course, it's just as likely that I'll end up getting used to using vim & jekyll as my environment and not waste any further time on it!

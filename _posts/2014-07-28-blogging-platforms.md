@@ -29,7 +29,7 @@ I'd like something that can mix up a few bits and pieces, and since I think in t
 
   I want to be able to stick some code in and have it highlighted, and not need some other service, even though github's gists are cool
 
-* A nice text editor that support vim key bindings
+* A nice text editor that supports vim key bindings
 
   Because why would you want to type any other way? ;)
 

@@ -37,7 +37,7 @@ a mixture of a horror film and one of those old text-based adventures:
 
 > You reach the stairwell: do you want to go \[U\]p or \[D\]own?
 
-I opted for down: up looked dark :(
+I opted for Down: Up looked dark :(
 
 In the basement there were a few things; a broken ladder, a couple of locked
 toilets, and then more stuff, detritus mostly. Not worth listing in a
@@ -145,9 +145,15 @@ I resolved to wait, and have a read whilst I was there - may as well make use of
 the perks available, right? After a few pages I got fed up waiting and called
 the police back with my incident number and had a good laugh about my situation
 with the very nice lady on the line - one should always appreciate one's
-ridiculous misfortunes. They had had no luck contacting the owner and were
-sending someone over. Confused at what this someone might be able to achieve,
-and not welcoming the spectacle of a fire-engine rescue, I went back to reading.
+ridiculous misfortunes.
+
+They had the foresight to enquire as to how much battery I had remaining: 33%
+but I pointed out that I was manning the phones in the bookshop this evening so
+if they needed me I was pretty available!
+
+They had had no luck contacting the owner and were sending someone over.
+Confused at what this someone might be able to achieve, and not welcoming the
+spectacle of a fire-engine rescue, I went back to reading.
 
 The police turned up and suggested that I could get back down the fire-escape
 and they could bring a ladder, but by this point I'd decided a couple of things:

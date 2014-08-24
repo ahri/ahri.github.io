@@ -12,7 +12,7 @@ Harrison. Having exhausted the obvious stuff I noticed a sign saying "more sci-f
 in the back!" so I obeyed the call and found big piles of sci-fi to trawl.
 Heaven!
 
-I should highlight at this point that this bookshop was decribed by my sister as
+I should highlight at this point that this bookshop was described by my sister as
 "the one that plays loud music out onto the street" and indeed it was blasting
 out jazz this evening - a pleasant and quite endearing habit of theirs, but one
 that turned out to be my downfall.

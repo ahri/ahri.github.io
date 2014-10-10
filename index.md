@@ -6,7 +6,7 @@ tagline: A collage of ranting, painting and programming
 {% include JB/setup %}
 
 ---
-> ## It's those stripping our freedoms that are the real terrorists; Polititians and the corporations and corruption behind them. Militants are trivial, transient and ineffective. The loss of freedom and privacy is scarier than any bomb.
+> ## It's those stripping our freedoms that are the real terrorists; Politicians and the corporations and corruption behind them. Militants are trivial, transient and ineffective. The loss of freedom and privacy is scarier than any bomb.
 ---
 
 # Blog Posts

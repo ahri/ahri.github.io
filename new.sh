@@ -16,17 +16,17 @@ normalize()
             for (i=1; i<=NF; i++) {
                 print \$i;
             }
-        }" | sort -u
+        }" | tr '[:upper:]' '[:lower:]' | sort -u
 }
 
 usage()
 {
     echo ""
     echo "`basename "$0"` \"some title\""
-    echo "\t-h --help"
-    echo "\t--date=1983-01-18"
-    echo "\t--tags=tag1,tag2"
-    echo "\t--category=cat1"
+    echo -e "\t-h --help"
+    echo -e "\t--date=1983-01-18"
+    echo -e "\t--tags=tag1,tag2"
+    echo -e "\t--category=cat1"
     echo ""
     echo "Existing categories:" `grep '^category: ' -r _posts/ | normalize`
     echo "Existing tags:" `grep '^tags: ' -r _posts/ | normalize`

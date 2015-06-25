@@ -128,7 +128,7 @@ definitely real.
 Not willing to let such trivialities as death-by-fall-and-impaling get in the
 way of a good escape I proceeded carefully down until I got to the first floor
 which had had its escape ladder chained up and padlocked. The padlock looked
-stronger than the enitire set of stairs put together. I considered a heroic jump
+stronger than the entire set of stairs put together. I considered a heroic jump
 to the floor but the nice man on the line suggested that this was perhaps not
 the best idea.
 

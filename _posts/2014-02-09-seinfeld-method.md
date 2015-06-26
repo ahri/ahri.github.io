@@ -20,7 +20,7 @@ your mind that you do without conscious thought.
 So what is a habit anyway? Wikipedia [says](http://en.wikipedia.org/wiki/Habit)
 "A habit (or wont) is a routine of behavior that is repeated regularly and
 tends to occur unconsciously." I think this is a helpful definition; it shows
-off the strength that we can harness by taking control and using this artifact
+off the strength that we can harness by taking control and using this artefact
 of human psyche for our own, initially conscious, benefit.
 
 ## The Gist
@@ -46,7 +46,7 @@ and found that you need to use a few guidelines in order to use it effectively.
    make sure that the goal is achievable each day.
 
 2. Some goals require detail and that detail stops you doing them each day if
-   something comes up; e.g. I have some objectives around coding on a specfic
+   something comes up; e.g. I have some objectives around coding on a specific
    project, where just doing miscellaneous coding wouldn't do (because I like
    neglecting projects...) So you need to allow yourself _planned_ days off
    where you know you won't be able to do this activity.

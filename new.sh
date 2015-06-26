@@ -21,13 +21,14 @@ normalize()
 
 usage()
 {
-    echo ""
+    echo
     echo "`basename "$0"` \"some title\""
-    echo -e "\t-h --help"
-    echo -e "\t--date=1983-01-18"
-    echo -e "\t--tags=tag1,tag2"
-    echo -e "\t--category=cat1"
-    echo ""
+    echo
+    echo "    -h --help"
+    echo "    --date=1983-01-18"
+    echo "    --tags=tag1,tag2"
+    echo "    --category=cat1"
+    echo
     echo "Existing categories:" `grep '^category: ' -r _posts/ | normalize`
     echo "Existing tags:" `grep '^tags: ' -r _posts/ | normalize`
 }

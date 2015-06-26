@@ -134,7 +134,7 @@ the best idea.
 
 He left me alone at that point for us both to regroup: he had to try to contact
 the owners, and I had to re-climb the steps-of-little-integrity and wait for
-rescue in the shop. It was out of my hands now - kinda reasuring in a pathetic
+rescue in the shop. It was out of my hands now - kinda reassuring in a pathetic
 sort of way. I welcomed opportunity to use two hands now that I wasn't holding
 my phone and ascended, breaking bits off here and there and trying to retain my
 sanity whilst considering my ridiculous death. Thankfully the door was still

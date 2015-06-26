@@ -13,7 +13,7 @@ So I built my own PubSub...
 
 heh. So I did this as a product of my need for an eventing system for one of my
 secret side-projects, built using the CQRS and Event-Sourcing paradigms, for
-which I needed a simple pubsub as my output. This grew slightly when I
+which I needed a simple PubSub as my output. This grew slightly when I
 implemented a simple Event Store and needed to latch onto all of the events that
 pass through the system.
 
@@ -21,7 +21,7 @@ In my case I have no need of a topic-based approach or clever error-handling.
 I've not even considered Promises and I don't want to think about NodeJS vs.
 Browser Compatibility. It's all very interesting stuff but I need to stay
 focused if I'm ever to finish what I'm doing, and of course if my requirements
-evolve past the abilities of my simple little pubsub I'll be more than happy to
+evolve past the abilities of my simple little PubSub I'll be more than happy to
 swap to a 3rd-party library.
 
 A whirlwind tour:

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gamedev on devpaint</title>
+    <link>http://www.ahri.net/tags/gamedev/</link>
+    <description>Recent content in Gamedev on devpaint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 25 Sep 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ahri.net/tags/gamedev/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>LibGDX on iOS!</title>
+      <link>http://www.ahri.net/2013/09/libgdx-on-ios/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2013/09/libgdx-on-ios/</guid>
+      <description>&lt;p&gt;The first &lt;a href=&#34;http://libgdx.badlogicgames.com/&#34;&gt;LibGDX&lt;/a&gt;/&lt;a href=&#34;http://www.robovm.org/&#34;&gt;RoboVM&lt;/a&gt; powered app is &lt;a href=&#34;http://www.badlogicgames.com/wordpress/?p=3193&#34;&gt;on the app store&lt;/a&gt;. This is really great news for indie game developers who don&amp;rsquo;t have the cash to shell out for &lt;a href=&#34;http://xamarin.com/&#34;&gt;Xamarian&lt;/a&gt; in order to deploy to iOS.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a really exciting time for developers looking to write-once-deploy-everywhere as this enabled games written in Java using LibGDX to be deployed to the desktop, HTML5, Android and now (stable soon!) iOS.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on devpaint</title>
+    <link>http://www.ahri.net/tags/javascript/</link>
+    <description>Recent content in Javascript on devpaint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 05 Aug 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ahri.net/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>uPubSub - A micro pub/sub implementation for NodeJS</title>
+      <link>http://www.ahri.net/2014/08/upubsub---a-micro-pub/sub-implementation-for-nodejs/</link>
+      <pubDate>Tue, 05 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2014/08/upubsub---a-micro-pub/sub-implementation-for-nodejs/</guid>
+      <description>&lt;p&gt;So I built my own PubSub&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;dramatic pause, awaiting shouts of &amp;ldquo;Not Invented Here syndrome!&amp;rdquo;&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;heh. So I did this as a product of my need for an eventing system for one of my
+secret side-projects, built using the CQRS and Event-Sourcing paradigms, for
+which I needed a simple PubSub as my output. This grew slightly when I
+implemented a simple Event Store and needed to latch onto all of the events that
+pass through the system.&lt;/p&gt;
+
+&lt;p&gt;In my case I have no need of a topic-based approach or clever error-handling.
+I&amp;rsquo;ve not even considered Promises and I don&amp;rsquo;t want to think about NodeJS vs.
+Browser Compatibility. It&amp;rsquo;s all very interesting stuff but I need to stay
+focused if I&amp;rsquo;m ever to finish what I&amp;rsquo;m doing, and of course if my requirements
+evolve past the abilities of my simple little PubSub I&amp;rsquo;ll be more than happy to
+swap to a 3rd-party library.&lt;/p&gt;
+
+&lt;p&gt;A whirlwind tour:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;code class=&#34;language-bash line-numbers&#34;&gt;
+$ npm install --save upubsub
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;then&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript line-numbers&#34;&gt;
+var uPubSub = require(&#39;upubsub&#39;),
+    pubsub = new uPubSub();
+
+function handler(message) {
+  console.log(&#34;Handling &#34; + message);
+}
+
+pubsub.subscribe(&#34;eventName&#34;, handler);
+pubsub.publish(&#34;eventName&#34;, &#34;foo&#34;); // outputs &#34;Handling foo&#34;
+pubsub.unsubscribe(&#34;eventName&#34;, handler);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;For now I have a nice little pubsub that dispatches in an async manner, and does
+as little clever stuff as possible. It&amp;rsquo;s available from my
+&lt;a href=&#34;https://github.com/ahri/upubsub&#34;&gt;github&lt;/a&gt; and
+&lt;a href=&#34;http://npmjs.org/package/upubsub&#34;&gt;npm&lt;/a&gt; and weighs in at 66 loc and 1.72kb. If
+you want to use it in a browser it&amp;rsquo;ll need to be run through
+&lt;a href=&#34;http://browserify.org&#34;&gt;browserify&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One thing that did catch me out is that my app was built with a fluent interface
+which doesn&amp;rsquo;t play nice when the output is events and the write-model is getting
+updated later than the next fluent call. Oops. I could just force the pubsub to
+be synchronous for testing purposes (the main use of the fluent API) but this
+seems like cheating!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

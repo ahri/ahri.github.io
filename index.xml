@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devpaint</title>
+    <link>http://www.ahri.net/</link>
+    <description>Recent content on devpaint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 14 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ahri.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting into Containers</title>
+      <link>http://www.ahri.net/2015/11/getting-into-containers/</link>
+      <pubDate>Sat, 14 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2015/11/getting-into-containers/</guid>
+      <description>&lt;p&gt;For a while now I&amp;rsquo;ve been experimenting with &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt;
+which provides a useful level of abstraction over Containers. I&amp;rsquo;m still finding
+my feet in this exciting new world of cheap sort-of-virtualisation but so far
+I&amp;rsquo;m really enjoying the isolation they provide, allowing for explicit bundling
+of dependencies and repeatable builds. You can probably see how interested I&amp;rsquo;ve
+been from my &lt;a href=&#34;https://github.com/search?q=user%3Aahri+docker&#34;&gt;github history&lt;/a&gt;
+these past months!&lt;/p&gt;
+
+&lt;p&gt;One thing I have found is that I don&amp;rsquo;t really trust other people&amp;rsquo;s builds all
+that much and have been preferring to roll my own in most cases, which has the
+benefit of forcing me to learn the tool but obviously contributes to the
+existing problem that we already have lots of images purportedly doing the same
+thing - just have a look at &lt;a href=&#34;https://hub.docker.com/search/?q=caddy&#34;&gt;the number of
+images&lt;/a&gt; for
+&lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; to get idea of this problem.&lt;/p&gt;
+
+&lt;p&gt;The problem is two-fold: the first half is that builds are not necessarily
+trustworthy because they aren&amp;rsquo;t signed - this is currently being addressed by
+the Docker team. The second half is more subtle though; with the tech being so
+new people are all doing their own thing in their own way; lots of images
+require volumes mounting with configuration being provided that way, while
+others prefer to take it from a central configuration provided by
+&lt;a href=&#34;https://www.consul.io/&#34;&gt;Consul&lt;/a&gt; or &lt;a href=&#34;https://coreos.com/etcd/&#34;&gt;etcd&lt;/a&gt;. Personally
+I&amp;rsquo;m erring towards stdin and command-line arguments where possible, largely
+because I don&amp;rsquo;t like the volume solution and don&amp;rsquo;t have any experience with the
+enterprise-level key-value stores.&lt;/p&gt;
+
+&lt;p&gt;Watching the trends and best-practises should prove very interesting indeed.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>So I got locked in a bookshop</title>
+      <link>http://www.ahri.net/2014/08/so-i-got-locked-in-a-bookshop/</link>
+      <pubDate>Sat, 23 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2014/08/so-i-got-locked-in-a-bookshop/</guid>
+      <description>
+
+&lt;p&gt;I began browsing the sci-fi section, looking for trashy stuff mostly, like Harry
+Harrison. Having exhausted the obvious stuff I noticed a sign saying &amp;ldquo;more sci-fi
+in the back!&amp;rdquo; so I obeyed the call and found big piles of sci-fi to trawl.
+Heaven!&lt;/p&gt;
+
+&lt;p&gt;I should highlight at this point that this bookshop was described by my sister as
+&amp;ldquo;the one that plays loud music out onto the street&amp;rdquo; and indeed it was blasting
+out jazz this evening - a pleasant and quite endearing habit of theirs, but one
+that turned out to be my downfall.&lt;/p&gt;
+
+&lt;p&gt;I continued to browse the books and amassed infinitely more in my I&amp;rsquo;ll-probably-
+buy-this-stuff pile than I had expected (i.e. my expectation was for zero since
+I already have plenty of unread books to plough through!) There&amp;rsquo;s some great
+stuff there; from Harry Harrison to Heinlein to LeGuin, and even a Star Trek
+book which I&amp;rsquo;m pretty dubious about, but hey it&amp;rsquo;s about Romulans so it&amp;rsquo;s gotta
+be good, right?!&lt;/p&gt;
+
+&lt;p&gt;I eventually decided that the pile was big enough and that I should probably get
+out before I bought half the shop.&lt;/p&gt;
+
+&lt;p&gt;I looked around. Nobody. Called &amp;ldquo;HELLO?!&amp;rdquo; a few times. Nothing. I analysed the
+situation; the music was still on, as were the lights, there was an uneaten
+salad of some variety prepped and ready to dig into. Cool. They must be around
+somewhere.&lt;/p&gt;
+
+&lt;p&gt;I tried a couple of doors; one went downstairs and one up. It felt rather like
+a mixture of a horror film and one of those old text-based adventures:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You reach the stairwell: do you want to go [U]p or [D]own?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I opted for Down: Up looked dark :(&lt;/p&gt;
+
+&lt;p&gt;In the basement there were a few things; a broken ladder, a couple of locked
+toilets, and then more stuff, detritus mostly. Not worth listing in a
+text-adventure.&lt;/p&gt;
+
+&lt;p&gt;Ok, so there&amp;rsquo;s nobody here. I&amp;rsquo;ll leave the hard-won pile of books near the till
+and come back tomorrow. No big deal!&lt;/p&gt;
+
+&lt;p&gt;Oh shit. The door is locked. I&amp;rsquo;m stuck in someone else&amp;rsquo;s shop and I&amp;rsquo;m alone and
+I have no food except someone else&amp;rsquo;s salad and when did I last use the toilet
+and will I survive the night?!?! Perhaps panicking wasn&amp;rsquo;t going to be so
+helpful: deep breath.&lt;/p&gt;
+
+&lt;p&gt;More investigation of the situation was needed: surely I was being a simpleton
+and there was actually a way to open this locked door. Nope. Sealed. Not a yale
+lock. Well then - let&amp;rsquo;s think logically about this - there must be spare keys?
+Found precisely &lt;em&gt;one&lt;/em&gt; that looked promising. Didn&amp;rsquo;t fit. My heart sank.&lt;/p&gt;
+
+&lt;p&gt;Ok, phone numbers then - there must be a mobile scribbled down somewhere! Rescue
+is a phone call away! Nope. Ok, think laterally. Visit their website in search
+of a number&amp;hellip; nope, only a landline for the shop&amp;hellip; try it anyway in the vain
+hope that it&amp;rsquo;s forwarding.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;RING RING&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ok, that didn&amp;rsquo;t work. Tricky.&lt;/p&gt;
+
+&lt;p&gt;Around this time, and noting the security camera I decided it might be prudent
+to call the police, hopefully demonstrating that I wasn&amp;rsquo;t involved in the heist
+of a bookshop. I quickly got through, apologised in an extremely English manner
+for wasting everyone&amp;rsquo;s time, and explained the situation, at which point I must
+have been allocated the very lowest priority possible and stuck in a phone
+queue being repeatedly informed that more important emergencies were going on
+and to stop being a big baby. Well, that&amp;rsquo;s what I read into it anyway.&lt;/p&gt;
+
+&lt;h2 id=&#34;know-your-enemy:fe40e36e17e5b65bbd1e8b9fb1c83adb&#34;&gt;Know your enemy&lt;/h2&gt;
+
+&lt;p&gt;Exploration was the way forward, it seemed, with no official attention (but
+holding on for the police to pick up) I ventured forth. Up I went. More
+shouting: &amp;ldquo;HELLO?! ANYONE THERE?!&amp;rdquo; thinking &amp;lt;I&amp;rsquo;m going to die&amp;gt;. Seems
+overly dramatic, but read on! Coulda happened!&lt;/p&gt;
+
+&lt;p&gt;Floors of books, and knick-knacks, and less books as I went up: top floor was
+largely empty - another ladder, not so broken looking, and jackpot! FIRE EXIT!&lt;/p&gt;
+
+&lt;p&gt;Unfortunately the damn thing wouldn&amp;rsquo;t open - the push-bar thing was stuck and I
+couldn&amp;rsquo;t urge it open, so I gave it a sharp kick and smelt the fresh air!
+I felt like Mel Gibson leading the charge against the
+melodramatically-and-largely-misrepresented English in Braveheart. FREEDOM!&lt;/p&gt;
+
+&lt;p&gt;Turns out it was open about 2 inches and now it was stuck. Really stuck. I
+booted it a couple more times for good measure but it didn&amp;rsquo;t shift and I was
+worried about breaking stuff. I decided to use the old lift-and-apply-pressure
+technique. Cue sound of rotten wood giving way. Oops. Broke the top hinge. On
+the plus side I could now get out, which I did, and then nipped back in and
+down to the till to write a letter of apology.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hi&lt;/p&gt;
+
+&lt;p&gt;You locked me in your shop! I tried calling you but couldn&amp;rsquo;t find your mobile.
+I searched for a spare key to no avail.&lt;/p&gt;
+
+&lt;p&gt;I found a fire escape door at the top floor and pushed hard to open it, but
+the wood was rotten and the top hinge broke! I&amp;rsquo;m sorry!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been trying to call the police for 20mins but they put my on hold so I&amp;rsquo;ll
+try the fire escape.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll pop in tomorrow to buy the books! [arrow drawn here to the treasure-trove
+of discovered books - my main concern at this point was genuinely that they
+might re-file my treasure-trove!]&lt;/p&gt;
+
+&lt;p&gt;-Adam&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Back up I went, out onto the fire escape which I discovered was really rusty and
+a lot higher up than I&amp;rsquo;d hoped&amp;hellip; I don&amp;rsquo;t really like heights! At this point the
+police picked up and I apologised profusely and gave a short summary of events
+culminating in my position at the top of a dodgy fire-escape, the door for which
+I left ajar just in case I needed it - possibly the most sensible thing I&amp;rsquo;ve
+ever done!&lt;/p&gt;
+
+&lt;p&gt;The nice bloke on the end of the line suggested that if I felt safe I should try
+using the fire escape, and I didn&amp;rsquo;t want to seem too pathetic, having already
+been locked in a shop by mistake, and gave it a whirl. The first step was solid
+and I gained enough confidence to stride onto the next - which immediately
+loosened and gave way on one side. This was a sobering moment indeed. Shit was
+definitely real.&lt;/p&gt;
+
+&lt;p&gt;Not willing to let such trivialities as death-by-fall-and-impaling get in the
+way of a good escape I proceeded carefully down until I got to the first floor
+which had had its escape ladder chained up and padlocked. The padlock looked
+stronger than the entire set of stairs put together. I considered a heroic jump
+to the floor but the nice man on the line suggested that this was perhaps not
+the best idea.&lt;/p&gt;
+
+&lt;p&gt;He left me alone at that point for us both to regroup: he had to try to contact
+the owners, and I had to re-climb the steps-of-little-integrity and wait for
+rescue in the shop. It was out of my hands now - kinda reassuring in a pathetic
+sort of way. I welcomed opportunity to use two hands now that I wasn&amp;rsquo;t holding
+my phone and ascended, breaking bits off here and there and trying to retain my
+sanity whilst considering my ridiculous death. Thankfully the door was still
+open when I reached the top - I had already resigned to the inevitability that
+it would&amp;rsquo;ve swung shut in the minimal wind so this was a positive development.&lt;/p&gt;
+
+&lt;p&gt;I resolved to wait, and have a read whilst I was there - may as well make use of
+the perks available, right? After a few pages I got fed up waiting and called
+the police back with my incident number and had a good laugh about my situation
+with the very nice lady on the line - one should always appreciate one&amp;rsquo;s
+ridiculous misfortunes.&lt;/p&gt;
+
+&lt;p&gt;They had the foresight to enquire as to how much battery I had remaining: 33%
+but I pointed out that I was manning the phones in the bookshop this evening so
+if they needed me I was pretty available!&lt;/p&gt;
+
+&lt;p&gt;They had had no luck contacting the owner and were sending someone over.
+Confused at what this someone might be able to achieve, and not welcoming the
+spectacle of a fire-engine rescue, I went back to reading.&lt;/p&gt;
+
+&lt;p&gt;The police turned up and suggested that I could get back down the fire-escape
+and they could bring a ladder, but by this point I&amp;rsquo;d decided a couple of things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I wasn&amp;rsquo;t sure the fire escape would be charitable enough to stay up for a
+redux&lt;/li&gt;
+&lt;li&gt;This was going to take a while anyway, so why rush things?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We began discussing the fire brigade again and my heart sank. I could picture a
+fireman triumphantly carrying me over his manly shoulder - the pathetic wretch
+he supported not even able to escape a mere bookshop.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hey, this is my shop!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;God finally got bored of torturing me for cheap laughs. The owner was back!
+One-and-a-half hours after leaving me to my doom. He&amp;rsquo;d gone for a coffee, and
+this was the one time in 30 years running the shop that he hadn&amp;rsquo;t shouted &amp;ldquo;FIRE
+DRILL! EVERYONE OUT!&amp;rdquo; before locking up. I was just relieved that not too much
+fuss had been made, and was of course very apologetic about the door.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll be back tomorrow to buy that pile of books - they don&amp;rsquo;t take card, as it
+turns out.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>uPubSub - A micro pub/sub implementation for NodeJS</title>
+      <link>http://www.ahri.net/2014/08/upubsub---a-micro-pub/sub-implementation-for-nodejs/</link>
+      <pubDate>Tue, 05 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2014/08/upubsub---a-micro-pub/sub-implementation-for-nodejs/</guid>
+      <description>&lt;p&gt;So I built my own PubSub&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;dramatic pause, awaiting shouts of &amp;ldquo;Not Invented Here syndrome!&amp;rdquo;&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;heh. So I did this as a product of my need for an eventing system for one of my
+secret side-projects, built using the CQRS and Event-Sourcing paradigms, for
+which I needed a simple PubSub as my output. This grew slightly when I
+implemented a simple Event Store and needed to latch onto all of the events that
+pass through the system.&lt;/p&gt;
+
+&lt;p&gt;In my case I have no need of a topic-based approach or clever error-handling.
+I&amp;rsquo;ve not even considered Promises and I don&amp;rsquo;t want to think about NodeJS vs.
+Browser Compatibility. It&amp;rsquo;s all very interesting stuff but I need to stay
+focused if I&amp;rsquo;m ever to finish what I&amp;rsquo;m doing, and of course if my requirements
+evolve past the abilities of my simple little PubSub I&amp;rsquo;ll be more than happy to
+swap to a 3rd-party library.&lt;/p&gt;
+
+&lt;p&gt;A whirlwind tour:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;code class=&#34;language-bash line-numbers&#34;&gt;
+$ npm install --save upubsub
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;then&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript line-numbers&#34;&gt;
+var uPubSub = require(&#39;upubsub&#39;),
+    pubsub = new uPubSub();
+
+function handler(message) {
+  console.log(&#34;Handling &#34; + message);
+}
+
+pubsub.subscribe(&#34;eventName&#34;, handler);
+pubsub.publish(&#34;eventName&#34;, &#34;foo&#34;); // outputs &#34;Handling foo&#34;
+pubsub.unsubscribe(&#34;eventName&#34;, handler);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;For now I have a nice little pubsub that dispatches in an async manner, and does
+as little clever stuff as possible. It&amp;rsquo;s available from my
+&lt;a href=&#34;https://github.com/ahri/upubsub&#34;&gt;github&lt;/a&gt; and
+&lt;a href=&#34;http://npmjs.org/package/upubsub&#34;&gt;npm&lt;/a&gt; and weighs in at 66 loc and 1.72kb. If
+you want to use it in a browser it&amp;rsquo;ll need to be run through
+&lt;a href=&#34;http://browserify.org&#34;&gt;browserify&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One thing that did catch me out is that my app was built with a fluent interface
+which doesn&amp;rsquo;t play nice when the output is events and the write-model is getting
+updated later than the next fluent call. Oops. I could just force the pubsub to
+be synchronous for testing purposes (the main use of the fluent API) but this
+seems like cheating!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Blogging Platforms</title>
+      <link>http://www.ahri.net/2014/07/blogging-platforms/</link>
+      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2014/07/blogging-platforms/</guid>
+      <description>&lt;p&gt;A pretty general title, but I&amp;rsquo;ve been putting some thought into it. It&amp;rsquo;s one of those projects I&amp;rsquo;d like to do at some point that isn&amp;rsquo;t now. I&amp;rsquo;ll call them &lt;a href=&#34;http://www.ahri.net/categories.html#scribbles-ref&#34;&gt;scribbles&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So what I&amp;rsquo;m thinking is that while I like editing in Vim, it doesn&amp;rsquo;t quite suit me as a blogging environment. To be clear I suppose that text editors don&amp;rsquo;t suit me as blogging environments and I&amp;rsquo;d prefer to see what I&amp;rsquo;m doing as I&amp;rsquo;m doing it. &lt;a href=&#34;http://ghost.org&#34;&gt;Ghost&lt;/a&gt; is pretty nice, but I haven&amp;rsquo;t put much time into understanding its way of doing things, and having gotten into &lt;a href=&#34;http://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt; and just pushing up to GitHub I think I&amp;rsquo;d miss the transparency of the approach.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d like something that can mix up a few bits and pieces, and since I think in trees, here&amp;rsquo;s a sketch:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Markdown&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It&amp;rsquo;s nice, and I appreciate that it&amp;rsquo;s readable in text editors if that&amp;rsquo;s what I want&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Flat files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both the source and result should be flat so that hosting is easier&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Live Reload&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having that instant feedback helps to avoid mistakes, it&amp;rsquo;s pretty easy to achieve this these days, without nasty hooks into the browser&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Native code blocks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I want to be able to stick some code in and have it highlighted, and not need some other service, even though GitHub&amp;rsquo;s gists are cool&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A nice text editor that supports Vim key bindings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Because why would you want to type any other way? ;)&lt;/p&gt;
+
+&lt;p&gt;I might code something up sometime, perhaps with a mixture of NodeJS, event sourcing and some other bits and pieces. Of course, it&amp;rsquo;s just as likely that I&amp;rsquo;ll end up getting used to using Vim &amp;amp; Jekyll as my environment and not waste any further time on it!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>When to stop caring?</title>
+      <link>http://www.ahri.net/2014/02/when-to-stop-caring/</link>
+      <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2014/02/when-to-stop-caring/</guid>
+      <description>&lt;p&gt;I received some bad news about an estranged friend before I went on holiday and
+my first reaction was really &amp;ldquo;should I even care?&amp;rdquo;, see; the estrangement was
+pretty mutual and was the result of what I see as profound differences in our
+respective approaches to friendship.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t want to dig all that up, having spent a long time getting to grips with
+it and accepting that some relationships just don&amp;rsquo;t work. It really took a long
+time to stop thinking about my friend and feeling hurt about what had happened.&lt;/p&gt;
+
+&lt;p&gt;So back on topic; I had this bad news and it stirred all these feelings up, and
+my defensive reaction was simply that I shouldn&amp;rsquo;t care: so I&amp;rsquo;d try not to. I had
+a good holiday but I did dwell on it in-between having fun: am I really being
+honest with myself here? Can I really just ignore this bad thing that&amp;rsquo;s
+happened? Let&amp;rsquo;s bear in mind here; the bad thing is completely not his fault so
+it feels completely unjust to mix that up with the things for which I do hold
+him accountable; those actions and inactions that led up to the split.&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t managed to find an answer within myself to the question I&amp;rsquo;ve asked; I
+can&amp;rsquo;t switch my feelings on and off, and I can&amp;rsquo;t stop caring or wanting to help
+even if I (cynically) feel that I&amp;rsquo;ll end up disappointed that he&amp;rsquo;s not
+magically become a friend I want to have. So I&amp;rsquo;ll help where I can and I&amp;rsquo;ll
+hope anyway. I can&amp;rsquo;t see any other way that works for me.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Seinfeld Method</title>
+      <link>http://www.ahri.net/2014/02/seinfeld-method/</link>
+      <pubDate>Sun, 09 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2014/02/seinfeld-method/</guid>
+      <description>
+
+&lt;p&gt;It seems apt to start my new one-a-day blogging by discussing the &lt;a href=&#34;http://lifehacker.com/281626/jerry-seinfelds-productivity-secret&#34;&gt;Seinfeld Method&lt;/a&gt;
+which has stood me in good stead for a number of different habits. But I&amp;rsquo;m
+getting ahead of myself; I should explain.&lt;/p&gt;
+
+&lt;h2 id=&#34;motivation:e3b2d1aec77b4de4835daddcb4a91d04&#34;&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;The idea is that you can wrest control of your habits away from your
+subconscious - instead of being controlled by them. This means both creating
+new habits and breaking those undesirable bits and pieces you have lodged in
+your mind that you do without conscious thought.&lt;/p&gt;
+
+&lt;h2 id=&#34;habits:e3b2d1aec77b4de4835daddcb4a91d04&#34;&gt;Habits&lt;/h2&gt;
+
+&lt;p&gt;So what is a habit anyway? Wikipedia &lt;a href=&#34;http://en.wikipedia.org/wiki/Habit&#34;&gt;says&lt;/a&gt;
+&amp;ldquo;A habit (or wont) is a routine of behavior that is repeated regularly and
+tends to occur unconsciously.&amp;rdquo; I think this is a helpful definition; it shows
+off the strength that we can harness by taking control and using this artefact
+of human psyche for our own, initially conscious, benefit.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-gist:e3b2d1aec77b4de4835daddcb4a91d04&#34;&gt;The Gist&lt;/h2&gt;
+
+&lt;p&gt;So Seinfeld felt that just by doing something each day: making sure you really
+&lt;em&gt;do&lt;/em&gt; it, you make it easier to keep doing it. He was applying it to writing
+comedy, but I&amp;rsquo;m applying it in a few different areas: I used it to break my
+habit of biting my nails, for example!&lt;/p&gt;
+
+&lt;p&gt;So how does it work? It&amp;rsquo;s pretty simple: you use a big, real life,
+highly-visible calendar and mark off the days where you did, or didn&amp;rsquo;t do, the
+thing you said you were going to do, or stop doing. Simple, right? The &amp;ldquo;chain&amp;rdquo;
+part of it comes in where you don&amp;rsquo;t like to leave holes in your calendar - it
+looks untidy - so you have this extra bit of motivation to execute the action
+and cross off a day.&lt;/p&gt;
+
+&lt;h2 id=&#34;gotchas:e3b2d1aec77b4de4835daddcb4a91d04&#34;&gt;Gotchas&lt;/h2&gt;
+
+&lt;p&gt;So I&amp;rsquo;ve used this method for a year or so and applied it in a number of ways
+and found that you need to use a few guidelines in order to use it effectively.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Use vague objectives; don&amp;rsquo;t say &amp;ldquo;I want to go to the gym every day&amp;rdquo;, instead
+say &amp;ldquo;I want to do exercise every day&amp;rdquo; &amp;ndash; this allows you to have a lazy day
+now and then, or to do alternative exercise when you&amp;rsquo;re on holiday, i.e.
+make sure that the goal is achievable each day.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Some goals require detail and that detail stops you doing them each day if
+something comes up; e.g. I have some objectives around coding on a specific
+project, where just doing miscellaneous coding wouldn&amp;rsquo;t do (because I like
+neglecting projects&amp;hellip;) So you need to allow yourself &lt;em&gt;planned&lt;/em&gt; days off
+where you know you won&amp;rsquo;t be able to do this activity.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I would say that needing to do this is a hint that you&amp;rsquo;re going too specific
+   and should really be trying to back off and make the goal more manageable
+   and flexible. So your preference should be to ease the goal instead of
+   adding in a level of paperwork like this that could spell the failure of
+   your objective.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Real-life, month-sized, single objective calendars are the way to go: you
+might think that this will make managing many objectives difficult, and
+you&amp;rsquo;d be right. Think of it as a hint that you shouldn&amp;rsquo;t push yourself so
+hard! Physical calendars are really a must as they&amp;rsquo;re much harder to ignore
+than some ephemeral digital version.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;when-am-i-done:e3b2d1aec77b4de4835daddcb4a91d04&#34;&gt;When am I done?&lt;/h2&gt;
+
+&lt;p&gt;As with many things this is a judgement call: you&amp;rsquo;re done when you no longer
+feel that executing your desired action takes any effort; you do that thing
+naturally, without needing to make space for it in your schedule &amp;ndash; it&amp;rsquo;s now a
+core part of your day. You can throw the calendar out and consider building or
+breaking a new one.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VVVVVV</title>
+      <link>http://www.ahri.net/2013/10/vvvvvv/</link>
+      <pubDate>Sat, 05 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2013/10/vvvvvv/</guid>
+      <description>
+
+&lt;h3 id=&#34;intro:edf0b1df9e2e226ec0c9379e5e49e937&#34;&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.ahri.net/images/vvvvvv/map.png&#34; style=&#34;float:right; height:50%; width:50%; margin: 10px;&#34; /&gt;
+
+&lt;a href=&#34;http://thelettervsixtim.es/&#34;&gt;This is a game&lt;/a&gt; that&amp;rsquo;s taken minimalism as a
+mantra; its aesthetic, audio, controls, and attitude as a whole push for a focus
+on what you can do in the world, which is not huge but large and challenging
+enough to provide a lot of enjoyment if puzzle and skill-based platforming
+appeal to you.&lt;/p&gt;
+
+&lt;h3 id=&#34;pixel-art:edf0b1df9e2e226ec0c9379e5e49e937&#34;&gt;Pixel art&lt;/h3&gt;
+
+&lt;p&gt;The first point point of judgement for me about any game is the graphics, and
+these are retro; like really, really simple. This is taking pixel art right back
+to Commodore 64 levels. I&amp;rsquo;m actually not a huge fan of the graphics; they&amp;rsquo;re so
+utilitarian that there&amp;rsquo;s really very little artistry to the look; it&amp;rsquo;s no Fez!&lt;/p&gt;
+
+&lt;p&gt;On the other hand the minimal graphics give the game a focused feel: you&amp;rsquo;re here
+to solve puzzles and to die, it&amp;rsquo;s really clear and it fits with everything else,
+and you really feel the charm of an unhappy face when you screw up &amp;ndash; it makes
+me smile through the frustration.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.ahri.net/images/vvvvvv/take_my_lead.png&#34; style=&#34;float:left; height:50%; width:50%; margin: 10px;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;chip-tunes:edf0b1df9e2e226ec0c9379e5e49e937&#34;&gt;Chip tunes&lt;/h3&gt;
+
+&lt;p&gt;The music, again, is simple but nicely paced to urge you on. The effects and
+overall ambience has that minimalist feel but this time without feeling so raw;
+more by design. I sat playing for a while with the game muted while taking
+screenshots and it&amp;rsquo;s amazing what a huge difference in motivation is made by the
+lack of sound whilst being challenged.&lt;/p&gt;
+
+&lt;h3 id=&#34;cheap-controls:edf0b1df9e2e226ec0c9379e5e49e937&#34;&gt;Cheap controls&lt;/h3&gt;
+
+&lt;p&gt;The controls are simple too: left, right, invert, interact. And I debated
+listing &amp;ldquo;interact&amp;rdquo; given that you need to hit enter only to teleport, read
+stuff, or talk to other characters. You do none of these things frequently!&lt;/p&gt;
+
+&lt;p&gt;The controls are tight and you know that it&amp;rsquo;s your fault when you die, though
+it&amp;rsquo;s a bit frustrating to hit spikes after the screen changes. To be fair this
+is certainly by design, and there are rolling movement stages that really push
+you to hit pace and ability in tandem which can be very rewarding.&lt;/p&gt;
+
+&lt;h3 id=&#34;quick-death-cycle:edf0b1df9e2e226ec0c9379e5e49e937&#34;&gt;Quick death cycle&lt;/h3&gt;
+
+&lt;p&gt;In a game like this you need to get back into the action after dying; much like
+Super Meat Boy you pass the challenges through muscle memory as much as anything
+else and being thrown back in encourages you to try &amp;ldquo;just one more time&amp;rdquo;. If I
+were to &amp;ldquo;correct&amp;rdquo; one thing about the game it would be to remove the tiny delay
+in re-spawn; this is the time that I decide to quit and removing it would change
+that thought process; learn from SMB!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.ahri.net/images/vvvvvv/trinkets.png&#34; style=&#34;float:right; height:50%; width:50%; margin: 10px;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;puzzles:edf0b1df9e2e226ec0c9379e5e49e937&#34;&gt;Puzzles&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s important to distinguish between SMB&amp;rsquo;s purely skill-based gaming and
+VVVVVV&amp;rsquo;s mix of puzzle elements and skill challenges; VVVVVV&amp;rsquo;s switched gravity
+mechanic provides many slower puzzles that require a more Portal-esque mentality
+to solve and progress, and its interesting companion subsection forces you to
+consider the actions of an NPC, albeit in a form that you indirectly control.&lt;/p&gt;
+
+&lt;h3 id=&#34;npc-interactions:edf0b1df9e2e226ec0c9379e5e49e937&#34;&gt;NPC interactions&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s almost not worth mentioning the NPC interactions; they&amp;rsquo;re so few and far
+between. I&amp;rsquo;m calling them out simply because they make me smile: they really
+embrace the general minimalism of the game by hinting at a back story but almost
+mocking the idea that there&amp;rsquo;s any credible explanation for their predicament and
+the context for our gaming. The sense of humour and its subtle, almost
+dismissive character really appealed to me.&lt;/p&gt;
+
+&lt;h3 id=&#34;in-conclusion:edf0b1df9e2e226ec0c9379e5e49e937&#34;&gt;In conclusion&amp;hellip;&lt;/h3&gt;
+
+&lt;p&gt;VVVVVV is a cool indie game, great for a quick blast, it&amp;rsquo;s got a nice aesthetic
+which some really nice tunes to keep the pace up and which really helps with
+getting back into the puzzle you just failed, and fail you will!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>LibGDX on iOS!</title>
+      <link>http://www.ahri.net/2013/09/libgdx-on-ios/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2013/09/libgdx-on-ios/</guid>
+      <description>&lt;p&gt;The first &lt;a href=&#34;http://libgdx.badlogicgames.com/&#34;&gt;LibGDX&lt;/a&gt;/&lt;a href=&#34;http://www.robovm.org/&#34;&gt;RoboVM&lt;/a&gt; powered app is &lt;a href=&#34;http://www.badlogicgames.com/wordpress/?p=3193&#34;&gt;on the app store&lt;/a&gt;. This is really great news for indie game developers who don&amp;rsquo;t have the cash to shell out for &lt;a href=&#34;http://xamarin.com/&#34;&gt;Xamarian&lt;/a&gt; in order to deploy to iOS.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a really exciting time for developers looking to write-once-deploy-everywhere as this enabled games written in Java using LibGDX to be deployed to the desktop, HTML5, Android and now (stable soon!) iOS.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TDD on Views</title>
+      <link>http://www.ahri.net/2013/09/tdd-on-views/</link>
+      <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2013/09/tdd-on-views/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been struggling along for a while seeing whether I can bear the pain of employing Test Driven Development with my Views (I went for an MVC architecture for my app for simplicity) and I&amp;rsquo;ve gotten to the point where I&amp;rsquo;m just going to remove all the unit testing on them; it&amp;rsquo;s so brittle (as foreseen by everyone else).&lt;/p&gt;
+
+&lt;p&gt;The point of this post isn&amp;rsquo;t to express surprise, it&amp;rsquo;s to admit defeat and move on, perhaps revisiting UI testing when I have more time to properly dedicate myself to it.&lt;/p&gt;
+
+&lt;p&gt;To be fair it really pushed me to create a decent architecture and did a great job of highlighting where my architectural decisions were poor, but it&amp;rsquo;s now feeling like cleaning it up would make rewriting my tests so arduous that I&amp;rsquo;m put off, and that should never be the case! Definitely time for them to die :)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

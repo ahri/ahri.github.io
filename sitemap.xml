@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://www.ahri.net/</loc>
+    <lastmod>2015-11-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.ahri.net/2015/11/getting-into-containers/</loc>
+    <lastmod>2015-11-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.ahri.net/2014/08/so-i-got-locked-in-a-bookshop/</loc>
+    <lastmod>2014-08-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.ahri.net/2014/08/upubsub---a-micro-pub/sub-implementation-for-nodejs/</loc>
+    <lastmod>2014-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.ahri.net/2014/07/blogging-platforms/</loc>
+    <lastmod>2014-07-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.ahri.net/2014/02/when-to-stop-caring/</loc>
+    <lastmod>2014-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.ahri.net/2014/02/seinfeld-method/</loc>
+    <lastmod>2014-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.ahri.net/2013/10/vvvvvv/</loc>
+    <lastmod>2013-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.ahri.net/2013/09/libgdx-on-ios/</loc>
+    <lastmod>2013-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.ahri.net/2013/09/tdd-on-views/</loc>
+    <lastmod>2013-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

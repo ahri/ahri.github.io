@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tdd on devpaint</title>
+    <link>http://www.ahri.net/tags/tdd/</link>
+    <description>Recent content in Tdd on devpaint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 24 Sep 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ahri.net/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>TDD on Views</title>
+      <link>http://www.ahri.net/2013/09/tdd-on-views/</link>
+      <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2013/09/tdd-on-views/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been struggling along for a while seeing whether I can bear the pain of employing Test Driven Development with my Views (I went for an MVC architecture for my app for simplicity) and I&amp;rsquo;ve gotten to the point where I&amp;rsquo;m just going to remove all the unit testing on them; it&amp;rsquo;s so brittle (as foreseen by everyone else).&lt;/p&gt;
+
+&lt;p&gt;The point of this post isn&amp;rsquo;t to express surprise, it&amp;rsquo;s to admit defeat and move on, perhaps revisiting UI testing when I have more time to properly dedicate myself to it.&lt;/p&gt;
+
+&lt;p&gt;To be fair it really pushed me to create a decent architecture and did a great job of highlighting where my architectural decisions were poor, but it&amp;rsquo;s now feeling like cleaning it up would make rewriting my tests so arduous that I&amp;rsquo;m put off, and that should never be the case! Definitely time for them to die :)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

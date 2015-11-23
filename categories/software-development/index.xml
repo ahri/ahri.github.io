@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Development on devpaint</title>
+    <link>http://www.ahri.net/categories/software-development/</link>
+    <description>Recent content in Software Development on devpaint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 14 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ahri.net/categories/software-development/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting into Containers</title>
+      <link>http://www.ahri.net/2015/11/getting-into-containers/</link>
+      <pubDate>Sat, 14 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2015/11/getting-into-containers/</guid>
+      <description>&lt;p&gt;For a while now I&amp;rsquo;ve been experimenting with &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt;
+which provides a useful level of abstraction over Containers. I&amp;rsquo;m still finding
+my feet in this exciting new world of cheap sort-of-virtualisation but so far
+I&amp;rsquo;m really enjoying the isolation they provide, allowing for explicit bundling
+of dependencies and repeatable builds. You can probably see how interested I&amp;rsquo;ve
+been from my &lt;a href=&#34;https://github.com/search?q=user%3Aahri+docker&#34;&gt;github history&lt;/a&gt;
+these past months!&lt;/p&gt;
+
+&lt;p&gt;One thing I have found is that I don&amp;rsquo;t really trust other people&amp;rsquo;s builds all
+that much and have been preferring to roll my own in most cases, which has the
+benefit of forcing me to learn the tool but obviously contributes to the
+existing problem that we already have lots of images purportedly doing the same
+thing - just have a look at &lt;a href=&#34;https://hub.docker.com/search/?q=caddy&#34;&gt;the number of
+images&lt;/a&gt; for
+&lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; to get idea of this problem.&lt;/p&gt;
+
+&lt;p&gt;The problem is two-fold: the first half is that builds are not necessarily
+trustworthy because they aren&amp;rsquo;t signed - this is currently being addressed by
+the Docker team. The second half is more subtle though; with the tech being so
+new people are all doing their own thing in their own way; lots of images
+require volumes mounting with configuration being provided that way, while
+others prefer to take it from a central configuration provided by
+&lt;a href=&#34;https://www.consul.io/&#34;&gt;Consul&lt;/a&gt; or &lt;a href=&#34;https://coreos.com/etcd/&#34;&gt;etcd&lt;/a&gt;. Personally
+I&amp;rsquo;m erring towards stdin and command-line arguments where possible, largely
+because I don&amp;rsquo;t like the volume solution and don&amp;rsquo;t have any experience with the
+enterprise-level key-value stores.&lt;/p&gt;
+
+&lt;p&gt;Watching the trends and best-practises should prove very interesting indeed.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>uPubSub - A micro pub/sub implementation for NodeJS</title>
+      <link>http://www.ahri.net/2014/08/upubsub---a-micro-pub/sub-implementation-for-nodejs/</link>
+      <pubDate>Tue, 05 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2014/08/upubsub---a-micro-pub/sub-implementation-for-nodejs/</guid>
+      <description>&lt;p&gt;So I built my own PubSub&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;dramatic pause, awaiting shouts of &amp;ldquo;Not Invented Here syndrome!&amp;rdquo;&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;heh. So I did this as a product of my need for an eventing system for one of my
+secret side-projects, built using the CQRS and Event-Sourcing paradigms, for
+which I needed a simple PubSub as my output. This grew slightly when I
+implemented a simple Event Store and needed to latch onto all of the events that
+pass through the system.&lt;/p&gt;
+
+&lt;p&gt;In my case I have no need of a topic-based approach or clever error-handling.
+I&amp;rsquo;ve not even considered Promises and I don&amp;rsquo;t want to think about NodeJS vs.
+Browser Compatibility. It&amp;rsquo;s all very interesting stuff but I need to stay
+focused if I&amp;rsquo;m ever to finish what I&amp;rsquo;m doing, and of course if my requirements
+evolve past the abilities of my simple little PubSub I&amp;rsquo;ll be more than happy to
+swap to a 3rd-party library.&lt;/p&gt;
+
+&lt;p&gt;A whirlwind tour:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;code class=&#34;language-bash line-numbers&#34;&gt;
+$ npm install --save upubsub
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;then&lt;/p&gt;
+
+&lt;p&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript line-numbers&#34;&gt;
+var uPubSub = require(&#39;upubsub&#39;),
+    pubsub = new uPubSub();
+
+function handler(message) {
+  console.log(&#34;Handling &#34; + message);
+}
+
+pubsub.subscribe(&#34;eventName&#34;, handler);
+pubsub.publish(&#34;eventName&#34;, &#34;foo&#34;); // outputs &#34;Handling foo&#34;
+pubsub.unsubscribe(&#34;eventName&#34;, handler);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;For now I have a nice little pubsub that dispatches in an async manner, and does
+as little clever stuff as possible. It&amp;rsquo;s available from my
+&lt;a href=&#34;https://github.com/ahri/upubsub&#34;&gt;github&lt;/a&gt; and
+&lt;a href=&#34;http://npmjs.org/package/upubsub&#34;&gt;npm&lt;/a&gt; and weighs in at 66 loc and 1.72kb. If
+you want to use it in a browser it&amp;rsquo;ll need to be run through
+&lt;a href=&#34;http://browserify.org&#34;&gt;browserify&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One thing that did catch me out is that my app was built with a fluent interface
+which doesn&amp;rsquo;t play nice when the output is events and the write-model is getting
+updated later than the next fluent call. Oops. I could just force the pubsub to
+be synchronous for testing purposes (the main use of the fluent API) but this
+seems like cheating!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Blogging Platforms</title>
+      <link>http://www.ahri.net/2014/07/blogging-platforms/</link>
+      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2014/07/blogging-platforms/</guid>
+      <description>&lt;p&gt;A pretty general title, but I&amp;rsquo;ve been putting some thought into it. It&amp;rsquo;s one of those projects I&amp;rsquo;d like to do at some point that isn&amp;rsquo;t now. I&amp;rsquo;ll call them &lt;a href=&#34;http://www.ahri.net/categories.html#scribbles-ref&#34;&gt;scribbles&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So what I&amp;rsquo;m thinking is that while I like editing in Vim, it doesn&amp;rsquo;t quite suit me as a blogging environment. To be clear I suppose that text editors don&amp;rsquo;t suit me as blogging environments and I&amp;rsquo;d prefer to see what I&amp;rsquo;m doing as I&amp;rsquo;m doing it. &lt;a href=&#34;http://ghost.org&#34;&gt;Ghost&lt;/a&gt; is pretty nice, but I haven&amp;rsquo;t put much time into understanding its way of doing things, and having gotten into &lt;a href=&#34;http://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt; and just pushing up to GitHub I think I&amp;rsquo;d miss the transparency of the approach.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d like something that can mix up a few bits and pieces, and since I think in trees, here&amp;rsquo;s a sketch:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Markdown&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It&amp;rsquo;s nice, and I appreciate that it&amp;rsquo;s readable in text editors if that&amp;rsquo;s what I want&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Flat files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both the source and result should be flat so that hosting is easier&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Live Reload&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having that instant feedback helps to avoid mistakes, it&amp;rsquo;s pretty easy to achieve this these days, without nasty hooks into the browser&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Native code blocks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I want to be able to stick some code in and have it highlighted, and not need some other service, even though GitHub&amp;rsquo;s gists are cool&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A nice text editor that supports Vim key bindings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Because why would you want to type any other way? ;)&lt;/p&gt;
+
+&lt;p&gt;I might code something up sometime, perhaps with a mixture of NodeJS, event sourcing and some other bits and pieces. Of course, it&amp;rsquo;s just as likely that I&amp;rsquo;ll end up getting used to using Vim &amp;amp; Jekyll as my environment and not waste any further time on it!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>LibGDX on iOS!</title>
+      <link>http://www.ahri.net/2013/09/libgdx-on-ios/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2013/09/libgdx-on-ios/</guid>
+      <description>&lt;p&gt;The first &lt;a href=&#34;http://libgdx.badlogicgames.com/&#34;&gt;LibGDX&lt;/a&gt;/&lt;a href=&#34;http://www.robovm.org/&#34;&gt;RoboVM&lt;/a&gt; powered app is &lt;a href=&#34;http://www.badlogicgames.com/wordpress/?p=3193&#34;&gt;on the app store&lt;/a&gt;. This is really great news for indie game developers who don&amp;rsquo;t have the cash to shell out for &lt;a href=&#34;http://xamarin.com/&#34;&gt;Xamarian&lt;/a&gt; in order to deploy to iOS.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a really exciting time for developers looking to write-once-deploy-everywhere as this enabled games written in Java using LibGDX to be deployed to the desktop, HTML5, Android and now (stable soon!) iOS.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TDD on Views</title>
+      <link>http://www.ahri.net/2013/09/tdd-on-views/</link>
+      <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2013/09/tdd-on-views/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been struggling along for a while seeing whether I can bear the pain of employing Test Driven Development with my Views (I went for an MVC architecture for my app for simplicity) and I&amp;rsquo;ve gotten to the point where I&amp;rsquo;m just going to remove all the unit testing on them; it&amp;rsquo;s so brittle (as foreseen by everyone else).&lt;/p&gt;
+
+&lt;p&gt;The point of this post isn&amp;rsquo;t to express surprise, it&amp;rsquo;s to admit defeat and move on, perhaps revisiting UI testing when I have more time to properly dedicate myself to it.&lt;/p&gt;
+
+&lt;p&gt;To be fair it really pushed me to create a decent architecture and did a great job of highlighting where my architectural decisions were poor, but it&amp;rsquo;s now feeling like cleaning it up would make rewriting my tests so arduous that I&amp;rsquo;m put off, and that should never be the case! Definitely time for them to die :)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

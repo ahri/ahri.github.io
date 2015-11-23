@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on devpaint</title>
+    <link>http://www.ahri.net/tags/docker/</link>
+    <description>Recent content in Docker on devpaint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 14 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ahri.net/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting into Containers</title>
+      <link>http://www.ahri.net/2015/11/getting-into-containers/</link>
+      <pubDate>Sat, 14 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ahri.net/2015/11/getting-into-containers/</guid>
+      <description>&lt;p&gt;For a while now I&amp;rsquo;ve been experimenting with &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt;
+which provides a useful level of abstraction over Containers. I&amp;rsquo;m still finding
+my feet in this exciting new world of cheap sort-of-virtualisation but so far
+I&amp;rsquo;m really enjoying the isolation they provide, allowing for explicit bundling
+of dependencies and repeatable builds. You can probably see how interested I&amp;rsquo;ve
+been from my &lt;a href=&#34;https://github.com/search?q=user%3Aahri+docker&#34;&gt;github history&lt;/a&gt;
+these past months!&lt;/p&gt;
+
+&lt;p&gt;One thing I have found is that I don&amp;rsquo;t really trust other people&amp;rsquo;s builds all
+that much and have been preferring to roll my own in most cases, which has the
+benefit of forcing me to learn the tool but obviously contributes to the
+existing problem that we already have lots of images purportedly doing the same
+thing - just have a look at &lt;a href=&#34;https://hub.docker.com/search/?q=caddy&#34;&gt;the number of
+images&lt;/a&gt; for
+&lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; to get idea of this problem.&lt;/p&gt;
+
+&lt;p&gt;The problem is two-fold: the first half is that builds are not necessarily
+trustworthy because they aren&amp;rsquo;t signed - this is currently being addressed by
+the Docker team. The second half is more subtle though; with the tech being so
+new people are all doing their own thing in their own way; lots of images
+require volumes mounting with configuration being provided that way, while
+others prefer to take it from a central configuration provided by
+&lt;a href=&#34;https://www.consul.io/&#34;&gt;Consul&lt;/a&gt; or &lt;a href=&#34;https://coreos.com/etcd/&#34;&gt;etcd&lt;/a&gt;. Personally
+I&amp;rsquo;m erring towards stdin and command-line arguments where possible, largely
+because I don&amp;rsquo;t like the volume solution and don&amp;rsquo;t have any experience with the
+enterprise-level key-value stores.&lt;/p&gt;
+
+&lt;p&gt;Watching the trends and best-practises should prove very interesting indeed.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

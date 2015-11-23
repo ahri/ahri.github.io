@@ -1,0 +1,111 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.14" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Getting into Containers &middot; devpaint </title>
+
+  
+  <link rel="stylesheet" href="http://www.ahri.net/css/poole.css">
+  <link rel="stylesheet" href="http://www.ahri.net/css/syntax.css">
+  <link rel="stylesheet" href="http://www.ahri.net/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="devpaint" />
+
+  
+  
+  <link rel="stylesheet" href="http://www.ahri.net/prism/prism.css">
+  <script src="http://www.ahri.net/prism/prism.js"></script>
+</head>
+
+	<body class="theme-base-0d">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://www.ahri.net/"><h1>devpaint</h1></a>
+      <p class="lead">
+       It&#39;s those stripping our freedoms that are the real terrorists; Politicians and the corporations and corruption behind them. Militants are trivial, transient and ineffective. The loss of freedom and privacy is scarier than any bomb. 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/categories/">Categories</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <br />
+      <li><a href="https://github.com/ahri">GitHub</a></li>
+      <li><a href="https://twitter.com/@bitwog">@bitwog</a></li>
+    </ul>
+
+    <p>&copy; 2015. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Getting into Containers</h1>
+			  <span class="post-date">Sat, Nov 14, 2015</span>
+			      <p>For a while now I&rsquo;ve been experimenting with <a href="https://www.docker.com/">Docker</a>
+which provides a useful level of abstraction over Containers. I&rsquo;m still finding
+my feet in this exciting new world of cheap sort-of-virtualisation but so far
+I&rsquo;m really enjoying the isolation they provide, allowing for explicit bundling
+of dependencies and repeatable builds. You can probably see how interested I&rsquo;ve
+been from my <a href="https://github.com/search?q=user%3Aahri+docker">github history</a>
+these past months!</p>
+
+<p>One thing I have found is that I don&rsquo;t really trust other people&rsquo;s builds all
+that much and have been preferring to roll my own in most cases, which has the
+benefit of forcing me to learn the tool but obviously contributes to the
+existing problem that we already have lots of images purportedly doing the same
+thing - just have a look at <a href="https://hub.docker.com/search/?q=caddy">the number of
+images</a> for
+<a href="https://caddyserver.com/">Caddy</a> to get idea of this problem.</p>
+
+<p>The problem is two-fold: the first half is that builds are not necessarily
+trustworthy because they aren&rsquo;t signed - this is currently being addressed by
+the Docker team. The second half is more subtle though; with the tech being so
+new people are all doing their own thing in their own way; lots of images
+require volumes mounting with configuration being provided that way, while
+others prefer to take it from a central configuration provided by
+<a href="https://www.consul.io/">Consul</a> or <a href="https://coreos.com/etcd/">etcd</a>. Personally
+I&rsquo;m erring towards stdin and command-line arguments where possible, largely
+because I don&rsquo;t like the volume solution and don&rsquo;t have any experience with the
+enterprise-level key-value stores.</p>
+
+<p>Watching the trends and best-practises should prove very interesting indeed.</p>
+
+			</div>
+
+			
+				<h2>Comments</h2>
+				<div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    var disqus_shortname = 'devpaint'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+			
+		</div>
+
+  </body>
+</html>

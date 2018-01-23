@@ -1,135 +1,39 @@
-	<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<!DOCTYPE html>
+<html>
+
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.14" />
-
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title> uPubSub - A micro pub/sub implementation for NodeJS &middot; devpaint </title>
-
-  
-  <link rel="stylesheet" href="http://www.ahri.net/css/poole.css">
-  <link rel="stylesheet" href="http://www.ahri.net/css/syntax.css">
-  <link rel="stylesheet" href="http://www.ahri.net/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
-
-  
-  <link href="" rel="alternate" type="application/rss+xml" title="devpaint" />
-
-  
-  
-  <link rel="stylesheet" href="http://www.ahri.net/prism/prism.css">
-  <script src="http://www.ahri.net/prism/prism.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 - uPubSub - A micro pub/sub implementation for NodeJS</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
 
-	<body class="theme-base-0d">
-		<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="http://www.ahri.net/"><h1>devpaint</h1></a>
-      <p class="lead">
-       It&#39;s those stripping our freedoms that are the real terrorists; Politicians and the corporations and corruption behind them. Militants are trivial, transient and ineffective. The loss of freedom and privacy is scarier than any bomb. 
-      </p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a></li>
-      <li><a href="/categories/">Categories</a></li>
-      <li><a href="/tags/">Tags</a></li>
-      <br />
-      <li><a href="https://github.com/ahri">GitHub</a></li>
-      <li><a href="https://twitter.com/@bitwog">@bitwog</a></li>
-    </ul>
-
-    <p>&copy; 2015. All rights reserved. </p>
-  </div>
-</div>
-
-
-		<div class="content container">
-			<div class="post">
-			 	<h1>uPubSub - A micro pub/sub implementation for NodeJS</h1>
-			  <span class="post-date">Tue, Aug 5, 2014</span>
-			      <p>So I built my own PubSub&hellip;</p>
-
-<p>&lt;dramatic pause, awaiting shouts of &ldquo;Not Invented Here syndrome!&rdquo;&gt;</p>
-
-<p>heh. So I did this as a product of my need for an eventing system for one of my
-secret side-projects, built using the CQRS and Event-Sourcing paradigms, for
-which I needed a simple PubSub as my output. This grew slightly when I
-implemented a simple Event Store and needed to latch onto all of the events that
-pass through the system.</p>
-
-<p>In my case I have no need of a topic-based approach or clever error-handling.
-I&rsquo;ve not even considered Promises and I don&rsquo;t want to think about NodeJS vs.
-Browser Compatibility. It&rsquo;s all very interesting stuff but I need to stay
-focused if I&rsquo;m ever to finish what I&rsquo;m doing, and of course if my requirements
-evolve past the abilities of my simple little PubSub I&rsquo;ll be more than happy to
-swap to a 3rd-party library.</p>
-
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="upubsub---a-micro-pubsub-implementation-for-nodejs">uPubSub - A micro pub/sub implementation for NodeJS</h1>
+<p>So I built my own PubSub…</p>
+<p>&lt;dramatic pause, awaiting shouts of “Not Invented Here syndrome!”&gt;</p>
+<p>heh. So I did this as a product of my need for an eventing system for one of my secret side-projects, built using the CQRS and Event-Sourcing paradigms, for which I needed a simple PubSub as my output. This grew slightly when I<br>
+implemented a simple Event Store and needed to latch onto all of the events that pass through the system.</p>
+<p>In my case I have no need of a topic-based approach or clever error-handling. I’ve not even considered Promises and I don’t want to think about NodeJS vs. Browser Compatibility. It’s all very interesting stuff but I need to stay<br>
+focused if I’m ever to finish what I’m doing, and of course if my requirements evolve past the abilities of my simple little PubSub I’ll be more than happy to swap to a 3rd-party library.</p>
 <p>A whirlwind tour:</p>
-
-<p><pre><code class="language-bash line-numbers">
-$ npm install --save upubsub
+<pre class=" language-bash"><code class="prism  language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --save upubsub
 </code></pre>
-</p>
-
 <p>then</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> uPubSub <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'upubsub'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    pubsub <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">uPubSub</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<p><pre><code class="language-javascript line-numbers">
-var uPubSub = require('upubsub'),
-    pubsub = new uPubSub();
+<span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Handling "</span> <span class="token operator">+</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-function handler(message) {
-  console.log("Handling " + message);
-}
-
-pubsub.subscribe("eventName", handler);
-pubsub.publish("eventName", "foo"); // outputs "Handling foo"
-pubsub.unsubscribe("eventName", handler);
+pubsub<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"eventName"</span><span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+pubsub<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span><span class="token string">"eventName"</span><span class="token punctuation">,</span> <span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// outputs "Handling foo"</span>
+pubsub<span class="token punctuation">.</span><span class="token function">unsubscribe</span><span class="token punctuation">(</span><span class="token string">"eventName"</span><span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-</p>
-
-<p>For now I have a nice little pubsub that dispatches in an async manner, and does
-as little clever stuff as possible. It&rsquo;s available from my
-<a href="https://github.com/ahri/upubsub">github</a> and
-<a href="http://npmjs.org/package/upubsub">npm</a> and weighs in at 66 loc and 1.72kb. If
-you want to use it in a browser it&rsquo;ll need to be run through
-<a href="http://browserify.org">browserify</a>.</p>
-
-<p>One thing that did catch me out is that my app was built with a fluent interface
-which doesn&rsquo;t play nice when the output is events and the write-model is getting
-updated later than the next fluent call. Oops. I could just force the pubsub to
-be synchronous for testing purposes (the main use of the fluent API) but this
-seems like cheating!</p>
-
-			</div>
-
-			
-				<h2>Comments</h2>
-				<div id="disqus_thread"></div>
-<script type="text/javascript">
-     
-    var disqus_shortname = 'devpaint'; 
-
-     
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<p>For now I have a nice little pubsub that dispatches in an async manner, and does as little clever stuff as possible. It’s available from my <a href="https://github.com/ahri/upubsub">github</a> and <a href="http://npmjs.org/package/upubsub">npm</a> and weighs in at 66 loc and 1.72kb. If you want to use it in a browser it’ll need to be run through <a href="http://browserify.org">browserify</a>.</p>
+<p>One thing that did catch me out is that my app was built with a fluent interface which doesn’t play nice when the output is events and the write-model is getting updated later than the next fluent call. Oops. I could just force the pubsub to be synchronous for testing purposes (the main use of the fluent API) but this seems like cheating!</p>
 </div>
-			
-		</div>
+</body>
 
-  </body>
 </html>

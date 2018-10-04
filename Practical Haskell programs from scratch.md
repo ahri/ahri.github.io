@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical Haskell programs from scratch</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#practical-haskell-programs-from-scratch-with-next-to-no-time-wasted-on-setup">Practical Haskell programs from scratch with next to no time wasted on setup</a>
+<ul>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#a-quick-intro">A quick intro</a></li>
+<li><a href="#install-basic-requirements">Install basic requirements</a></li>
+<li><a href="#write-a-program">Write a program</a></li>
+<li><a href="#third-party-dependencies">Third-party dependencies</a></li>
+<li><a href="#a-repl-read-evaluate-print-loop">A “REPL”; read-evaluate-print-loop</a></li>
+<li><a href="#watch">Watch</a></li>
+<li><a href="#compilation">Compilation</a></li>
+<li><a href="#searching-functions">Searching functions</a></li>
+<li><a href="#a-final-note">A final note</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="practical-haskell-programs-from-scratch-with-next-to-no-time-wasted-on-setup">Practical Haskell programs from scratch <em>with next to no time wasted on setup</em></h1>
+<h2 id="tldr">TL;DR</h2>
+<ol>
+<li>Install Stack</li>
+<li>Add a header to your scripts and maybe <code>chmod 755</code> them<pre><code>#!/usr/bin/env stack
+{- stack --resolver lts-12.9 --install-ghc runghc -}
+</code></pre>
+</li>
+<li>REPL: <code>$ stack ghci --resolver lts-12.9 --package PKG_NAME foo.hs</code></li>
+<li>Watch: <code>$ ghcid -c 'stack ghci --resolver lts-12.9 --package PKG_NAME foo.hs'</code></li>
+<li>Compile: <code>$ stack ghc --resolver lts-12.9 --package PKG_NAME foo.hs</code></li>
+<li>Search: <code>$ hoogle '[a] -&gt; Int'</code> or <a href="https://www.haskell.org/hoogle/">online</a></li>
+</ol>
+<hr>
+<h2 id="a-quick-intro">A quick intro</h2>
+<p>Haskell is a practical language, one in which we can be fully aware of the effects our programs might have; we are able to write safer programs that look nicer than any mainstream language, ones that are performant and that interact efficiently with the outside world.</p>
+<p>That’s not to say there are no difficulties in getting started; as with every language there’s an ecosystem to discover, a package manager to get to grips with, libraries to choose between, editor plugins to hunt down, and plenty of other things to distract you from actually writing some code.</p>
+<p>Here, I will supply what I consider to be the fastest way to get up and running with Haskell - it’s opinionated, and I’m sure you’ll want to tweak and improve on it as you learn more and form your own opinions and tastes, but it’s a straightforward start. I will keep it updated with what I consider to be the state of the art.</p>
+<p>One of the early problems newcomers to the community encounter is how to lay out a project; Where do the files go? How do I declare my dependencies? Stack? Cabal? Nix? To combat this paralysis without forcing you down a specific route I’m opting to help you write self-contained Haskell scripts. We’ll use Stack as a package manager for compilers and libraries alike.</p>
+<h2 id="install-basic-requirements">Install basic requirements</h2>
+<p>So let’s get going! Note that we’ll be doing a lot in the terminal (or a Command/PowerShell window) and that the commands you need to run are signified by a dollar sign followed by the command to copy/paste - you don’t need to copy the dollar sign too! First we need stack <em>(note: ignore the dollar symbol)</em>:<br>
+Linux/Mac: in a terminal <code>$ sudo apt install haskell-stack</code><br>
+Mac: in a terminal <code>$ sudo brew install haskell-stack</code><br>
+Windows: <a href="https://get.haskellstack.org/stable/windows-x86_64-installer.exe">installer</a> <em>- it’s also available on <a href="https://scoop.sh/">Scoop</a>, if you like package managers</em></p>
+<p>Failing that, follow the <a href="https://docs.haskellstack.org/en/stable/README/#how-to-install">Stack installation instructions</a>.</p>
+<p>Great, now in a terminal let’s update - if the following command doesn’t work, try restarting your terminal program:</p>
+<pre><code>$ stack upgrade
+$ stack --version
+</code></pre>
+<p>Verify that your version of Stack is now at <strong>1.7.1</strong> or above; if not you may need to fix your PATH in accordance with the location of the executable following the <code>stack upgrade</code> command. On Mac/Linux this likely means adding <code>$HOME/.local/bin</code> to the start of your PATH, and similarly on Windows by adding <code>%USERPROFILE%\AppData\Roaming\local\bin</code> to the start of your <strong>System</strong> (not User) PATH, then restarting your terminal (and maybe your computer).</p>
+<h2 id="write-a-program">Write a program</h2>
+<p>Now, let’s write a Haskell program. Fire up an editor of your choice (yep; Notepad will do fine) and paste in the following, noting that using tabs is a bad idea in Haskell - always indent with spaces, then save it somewhere you’ll be able to access from the terminal as “<code>first_haskell_program.hs</code>”:</p>
+<pre class=" language-haskell"><code class="prism  language-haskell"><span class="token operator">#!/</span><span class="token hvariable">usr</span><span class="token operator">/</span><span class="token hvariable">bin</span><span class="token operator">/</span><span class="token hvariable">env</span> <span class="token hvariable">stack</span>
+<span class="token comment">{- stack --resolver lts-12.9 --install-ghc runghc -}</span>
+
+<span class="token import_statement"><span class="token keyword">import</span> System.Environment</span>
+<span class="token import_statement"><span class="token keyword">import</span> System.Exit</span>
+<span class="token import_statement"><span class="token keyword">import</span> System.IO</span>
+
+<span class="token hvariable">main</span> <span class="token operator">::</span> <span class="token constant">IO</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token hvariable">main</span> <span class="token operator">=</span> <span class="token keyword">do</span>
+    <span class="token hvariable">args</span> <span class="token operator">&lt;-</span> <span class="token hvariable">getArgs</span>
+    <span class="token keyword">let</span> <span class="token hvariable">putStrLnErr</span> <span class="token operator">=</span> <span class="token hvariable">hPutStrLn</span> <span class="token hvariable">stderr</span>
+    <span class="token keyword">if</span> <span class="token builtin">length</span> <span class="token hvariable">args</span> <span class="token operator">&gt;</span> <span class="token number">0</span>
+        <span class="token keyword">then</span> <span class="token hvariable">putStrLnErr</span> <span class="token punctuation">(</span><span class="token builtin">show</span> <span class="token hvariable">args</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span> <span class="token hvariable">die</span> <span class="token string">"No args passed in"</span>
+
+    <span class="token builtin">putStrLn</span> <span class="token string">"stdin:"</span>
+    <span class="token builtin">getContents</span> <span class="token operator">&gt;&gt;=</span> <span class="token builtin">putStrLn</span>
+</code></pre>
+<p>Ok, before we run it, a quick warning - Stack is going to realise that we’re missing a Haskell compiler so it’s going to download it, which could take a little while as it’s around 200MB. Let’s try it out:</p>
+<p><code>$ stack first_haskell_program.hs arg1 arg2 arg3</code></p>
+<p>Type some stuff in when prompted with “<code>stdin:</code>”, and press CTRL+D (or CTRL+C in Windows) when you’re done.</p>
+<p>So let’s see where we’re up to: we installed all the tools we need to execute a Haskell program, wrote one to interact with the outside world (you, in this case) and ran it. That wasn’t so hard was it?</p>
+<p>An aside: on a posix system we can make <code>first_haskell_program.hs</code> executable with <code>chmod 755 first_haskell_program.hs</code> and then run it directly: <code>./first_haskell_program.hs</code>.</p>
+<p>Now, there’s a little bit more to feeling comfortable with a language than just running a program, so let’s dig a little deeper; we’re going to import a third-party library, get acquainted with the REPL, sort out auto-checking of your program, compile your program to a native binary, and to cap it all off we’re going to gain the ability to search for functions we can’t name and locate ones we can.</p>
+<h2 id="third-party-dependencies">Third-party dependencies</h2>
+<p>Languages tend to come alive when you can see how much the community contributes in terms of useful, stable libraries. One thing I’m confident you don’t want to do is to implement your own Regular Expression library (at least not yet!) so let’s leverage <a href="https://hackage.haskell.org/">Hackage</a> via Stack to grab a regex library and implement a simple <code>grep.hs</code>:</p>
+<pre class=" language-haskell"><code class="prism  language-haskell"><span class="token operator">#!/</span><span class="token hvariable">usr</span><span class="token operator">/</span><span class="token hvariable">bin</span><span class="token operator">/</span><span class="token hvariable">env</span> <span class="token hvariable">stack</span>
+<span class="token comment">{- stack --resolver lts-12.9 --install-ghc runghc
+    --package regex-posix
+-}</span>
+
+<span class="token import_statement"><span class="token keyword">import</span> Data.Foldable</span>
+<span class="token import_statement"><span class="token keyword">import</span> System.Environment</span>
+<span class="token import_statement"><span class="token keyword">import</span> System.Exit</span>
+<span class="token import_statement"><span class="token keyword">import</span> System.IO</span>
+<span class="token import_statement"><span class="token keyword">import</span> Text.Regex.Posix</span>
+
+<span class="token hvariable">main</span> <span class="token operator">::</span> <span class="token constant">IO</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token hvariable">main</span> <span class="token operator">=</span> <span class="token keyword">do</span>
+    <span class="token hvariable">args</span> <span class="token operator">&lt;-</span> <span class="token hvariable">getArgs</span>
+    <span class="token keyword">if</span> <span class="token builtin">length</span> <span class="token hvariable">args</span> <span class="token operator">==</span> <span class="token number">0</span>
+        <span class="token keyword">then</span> <span class="token hvariable">die</span> <span class="token string">"Provide a pattern"</span>
+        <span class="token keyword">else</span> <span class="token hvariable">pure</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">let</span> <span class="token hvariable">pattern</span> <span class="token operator">=</span> <span class="token builtin">head</span> <span class="token hvariable">args</span>
+
+    <span class="token hvariable">input</span> <span class="token operator">&lt;-</span> <span class="token builtin">getContents</span>
+    <span class="token hvariable">matches</span> <span class="token operator">&lt;-</span> <span class="token builtin">sequence</span> <span class="token punctuation">[</span><span class="token builtin">putStrLn</span> <span class="token hvariable">line</span> <span class="token operator">|</span> <span class="token hvariable">line</span> <span class="token operator">&lt;-</span> <span class="token builtin">lines</span> <span class="token hvariable">input</span><span class="token punctuation">,</span> <span class="token hvariable">line</span> <span class="token operator">=~</span> <span class="token hvariable">pattern</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">if</span> <span class="token builtin">length</span> <span class="token hvariable">matches</span> <span class="token operator">/=</span> <span class="token number">0</span>
+        <span class="token keyword">then</span> <span class="token hvariable">exitSuccess</span>
+        <span class="token keyword">else</span> <span class="token hvariable">exitFailure</span>
+</code></pre>
+<p>On a non-Windows system:</p>
+<pre><code>$ echo nope | stack grep.hs ^y; echo Exit: $?
+Exit: 1
+$ echo yup | stack grep.hs ^y; echo Exit: $?
+yup
+Exit: 0
+</code></pre>
+<p>On Windows:</p>
+<pre><code>&gt; echo nope | stack grep.hs ^y &amp; echo Exit: %errorlevel%
+Exit: 1
+&gt; echo yep | stack grep.hs ^y &amp; echo Exit: %errorlevel%
+yep
+Exit: 1
+</code></pre>
+<p>We’re testing the program here by sending in a single line using <code>echo</code> that’s being checked against the pattern <code>^y</code> which is a regex requiring that the input start with a “y” - you can check this behaviour against <code>egrep</code> (since we’re using regex-posix; use regex-compat for something more similar to <code>grep</code>) if you have it available on your system.</p>
+<h2 id="a-repl-read-evaluate-print-loop">A “REPL”; read-evaluate-print-loop</h2>
+<p>This is our playground - we can try things out, ask the compiler what’s going on, and poke bits of our program.</p>
+<p>We can run it, specifying the same resolver and packages as we use in the header of our script file.</p>
+<pre class=" language-sh"><code class="prism  language-sh">$ stack ghci --resolver lts-12.9 --package regex-posix grep.hs
+</code></pre>
+<p>Now we can interrogate the compiler to tell us about our program:</p>
+<pre class=" language-haskell"><code class="prism  language-haskell"><span class="token operator">&gt;</span> <span class="token operator">:</span><span class="token hvariable">t</span> <span class="token hvariable">main</span>
+<span class="token hvariable">main</span> <span class="token operator">::</span> <span class="token constant">IO</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;</span> <span class="token operator">:</span><span class="token hvariable">i</span> <span class="token hvariable">main</span>
+<span class="token hvariable">main</span> <span class="token operator">::</span> <span class="token constant">IO</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">-- Defined at /some/path/grep.hs:13:1</span>
+</code></pre>
+<p>Ok, that’s not that thrilling, wait, maybe we’re not familiar with the <code>=~</code> operator - where did that come from?</p>
+<pre class=" language-haskell"><code class="prism  language-haskell"><span class="token operator">&gt;</span> <span class="token operator">:</span><span class="token hvariable">i</span> <span class="token punctuation">(</span><span class="token operator">=~</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token operator">=~</span><span class="token punctuation">)</span> <span class="token operator">::</span>
+  <span class="token punctuation">(</span><span class="token constant">RegexMaker</span> <span class="token constant">Regex</span> <span class="token constant">CompOption</span> <span class="token constant">ExecOption</span> <span class="token hvariable">source</span><span class="token punctuation">,</span>
+   <span class="token constant">RegexContext</span> <span class="token constant">Regex</span> <span class="token hvariable">source1</span> <span class="token hvariable">target</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+  <span class="token hvariable">source1</span> <span class="token operator">-&gt;</span> <span class="token hvariable">source</span> <span class="token operator">-&gt;</span> <span class="token hvariable">target</span>
+        <span class="token comment">-- Defined in ‘Text.Regex.Posix.Wrap’</span>
+</code></pre>
+<p>Ah, so it came from <code>Text.Regex</code>, makes sense :)</p>
+<p>How about some other functions?</p>
+<pre class=" language-haskell"><code class="prism  language-haskell"><span class="token operator">&gt;</span> <span class="token operator">:</span><span class="token hvariable">t</span> <span class="token builtin">length</span>
+<span class="token builtin">length</span> <span class="token operator">::</span> <span class="token constant">Foldable</span> <span class="token hvariable">t</span> <span class="token operator">=&gt;</span> <span class="token hvariable">t</span> <span class="token hvariable">a</span> <span class="token operator">-&gt;</span> <span class="token constant">Int</span>
+<span class="token operator">&gt;</span> <span class="token operator">:</span><span class="token hvariable">t</span> <span class="token builtin">lines</span>
+<span class="token builtin">lines</span> <span class="token operator">::</span> <span class="token constant">String</span> <span class="token operator">-&gt;</span> <span class="token punctuation">[</span><span class="token constant">String</span><span class="token punctuation">]</span>
+</code></pre>
+<p>And how does that all fit together?</p>
+<pre class=" language-haskell"><code class="prism  language-haskell"><span class="token operator">&gt;</span> <span class="token operator">:</span><span class="token hvariable">t</span> <span class="token builtin">length</span> <span class="token punctuation">(</span><span class="token builtin">lines</span> <span class="token string">""</span><span class="token punctuation">)</span>
+<span class="token builtin">length</span> <span class="token punctuation">(</span><span class="token builtin">lines</span> <span class="token string">""</span><span class="token punctuation">)</span> <span class="token operator">::</span> <span class="token constant">Int</span>
+</code></pre>
+<p>Sometimes it’s not so easy to find an easy-to-type bit of data like <code>""</code> so we can just pretend:</p>
+<pre class=" language-haskell"><code class="prism  language-haskell"><span class="token operator">&gt;</span> <span class="token operator">:</span><span class="token hvariable">t</span> <span class="token builtin">length</span> <span class="token punctuation">(</span><span class="token builtin">lines</span> <span class="token punctuation">(</span><span class="token builtin">undefined</span><span class="token operator">::</span><span class="token constant">String</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token builtin">length</span> <span class="token punctuation">(</span><span class="token builtin">lines</span> <span class="token punctuation">(</span><span class="token builtin">undefined</span><span class="token operator">::</span><span class="token constant">String</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">::</span> <span class="token constant">Int</span>
+</code></pre>
+<h2 id="watch">Watch</h2>
+<p>It’s nice to know that things still compile while we’re editing code, so wouldn’t it be helpful if a tool sat there checking our work for us without us having to jump out and run our script all the time?</p>
+<p><code>$ stack install ghcid</code></p>
+<p>My process is always:</p>
+<ol>
+<li>Find a command that works to get me a GHCI session</li>
+<li>Use that exact command with <code>ghcid</code></li>
+</ol>
+<p>So let’s use the above command with <code>ghcid</code> - fire up a new terminal window and run this:<br>
+<code>$ ghcid -c 'stack ghci --resolver lts-12.9 --package regex-posix grep.hs'</code></p>
+<p>That will sit there checking your code compiles and giving you error output - try breaking your program; when you save <code>ghcid</code> will re-check it. Nice.</p>
+<h2 id="compilation">Compilation</h2>
+<p>You probably noticed that running <code>stack grep.hs</code> is a bit slow as it compiles the program before running each time. To avoid this we can compile to native code:</p>
+<pre><code>$ stack ghc --resolver lts-12.9 --package regex-posix grep.hs
+[1 of 1] Compiling Main             ( grep.hs, grep.o )
+Linking grep ...
+</code></pre>
+<p>Then, on a non-Windows system:</p>
+<pre><code>$ echo nope | ./grep ^y; echo Exit: $?
+Exit: 1
+$ echo yep | ./grep ^y; echo Exit: $?
+yep
+Exit: 0
+</code></pre>
+<p>and on a Windows system:</p>
+<pre><code>&gt; echo nope | grep.exe ^y &amp; echo Exit: %errorlevel%
+Exit: 0
+&gt;echo yep | grep.exe ^y &amp; echo Exit: %errorlevel%
+yep
+Exit: 1
+</code></pre>
+<h2 id="searching-functions">Searching functions</h2>
+<p>We have a great resource available to us in the ability to search all the packages published to Hackage via <a href="https://www.haskell.org/hoogle/">Hoogle</a>, and we can do this offline by installing the command-line util:</p>
+<pre><code>$ stack install hoogle
+$ hoogle update
+</code></pre>
+<p>Now we can search for functions by signature or name, and <code>hoogle</code> will do a fuzzy lookup for us:</p>
+<ul>
+<li><code>$ hoogle '[a] -&gt; Int'</code> will find us, amongst other things, the function <code>length</code></li>
+<li><code>$ hoogle 'getArgs'</code> will find us <code>getArgs</code> from <code>System.Environment</code></li>
+<li><code>$ hoogle 'Map a b -&gt; a -&gt; b'</code> will realise that we got the parameters in the wrong order for picking values out of a map structure given a key, and give us <code>(!) :: Ord k =&gt; Map k a -&gt; k -&gt; a</code>, so we’ve discovered a new operator from <code>Data.Map.Strict</code> with a guess at a function signature - awesome</li>
+</ul>
+<h2 id="a-final-note">A final note</h2>
+<p>Because I’m lazy and forgetful I use <a href="https://raw.githubusercontent.com/ahri/dotfiles/master/bin/hs-script">a script</a> to help me out with this stuff - it’s only available in shell script for now, but I plan to dogfood it by writing it in a self-contained Haskell script, which will enable me to use it on Windows, too.</p>
+
+    </div>
+  </div>
+</body>
+
+</html>

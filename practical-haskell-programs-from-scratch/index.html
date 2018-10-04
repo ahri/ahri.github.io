@@ -203,6 +203,7 @@ Exit: 1
 <p>We have a great resource available to us in the ability to search all the packages published to Hackage via <a href="https://www.haskell.org/hoogle/">Hoogle</a>, and we can do this offline by installing the command-line util:</p>
 <pre><code>$ stack install hoogle
 $ hoogle update
+$ hoogle generate
 </code></pre>
 <p>Now we can search for functions by signature or name, and <code>hoogle</code> will do a fuzzy lookup for us:</p>
 <ul>
@@ -212,6 +213,8 @@ $ hoogle update
 </ul>
 <h2 id="a-final-note">A final note</h2>
 <p>Because I’m lazy and forgetful I use <a href="https://raw.githubusercontent.com/ahri/dotfiles/master/bin/hs-script">a script</a> to help me out with this stuff - it’s only available in shell script for now, but I plan to dogfood it by writing it in a self-contained Haskell script, which will enable me to use it on Windows, too.</p>
+<h3 id="thanks">Thanks</h3>
+<p><a href="https://www.chris-bacon.co.uk/">Chris Bacon</a></p>
 
     </div>
   </div>

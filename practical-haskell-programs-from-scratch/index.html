@@ -24,6 +24,9 @@
 <li><a href="#watch">Watch</a></li>
 <li><a href="#compilation">Compilation</a></li>
 <li><a href="#searching-functions">Searching functions</a></li>
+<li><a href="#format">Format</a></li>
+<li><a href="#lint">Lint</a></li>
+<li><a href="#tags">Tags</a></li>
 <li><a href="#a-final-note">A final note</a></li>
 </ul>
 </li>
@@ -45,6 +48,9 @@
 <li>Watch: <code>$ ghcid -c 'stack ghci --resolver lts-12.9 --package PKG_NAME foo.hs'</code></li>
 <li>Compile: <code>$ stack ghc --resolver lts-12.9 --package PKG_NAME foo.hs</code></li>
 <li>Search: <code>$ hoogle '[a] -&gt; Int'</code> or <a href="https://www.haskell.org/hoogle/">online</a></li>
+<li>Format: <code>$ brittany --write-mode inplace foo.hs</code></li>
+<li>Lint: <code>$ hlint --refactor --refactor-options="-is" foo.hs</code></li>
+<li>Tags: <code>$ fast-tags foo.hs</code></li>
 </ol>
 <hr>
 <h2 id="a-quick-intro">A quick intro</h2>
@@ -89,6 +95,7 @@
     --package regex-posix
 -}</span>
 
+<span class="token import_statement"><span class="token keyword">import</span> Control.Monad</span>
 <span class="token import_statement"><span class="token keyword">import</span> Data.Foldable</span>
 <span class="token import_statement"><span class="token keyword">import</span> System.Environment</span>
 <span class="token import_statement"><span class="token keyword">import</span> System.Exit</span>
@@ -98,9 +105,7 @@
 <span class="token hvariable">main</span> <span class="token operator">::</span> <span class="token constant">IO</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token hvariable">main</span> <span class="token operator">=</span> <span class="token keyword">do</span>
     <span class="token hvariable">args</span> <span class="token operator">&lt;-</span> <span class="token hvariable">getArgs</span>
-    <span class="token keyword">if</span> <span class="token builtin">length</span> <span class="token hvariable">args</span> <span class="token operator">==</span> <span class="token number">0</span>
-        <span class="token keyword">then</span> <span class="token hvariable">die</span> <span class="token string">"Provide a pattern"</span>
-        <span class="token keyword">else</span> <span class="token hvariable">pure</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token hvariable">when</span> <span class="token punctuation">(</span><span class="token builtin">null</span> <span class="token hvariable">args</span><span class="token punctuation">)</span> <span class="token operator">$</span> <span class="token hvariable">die</span> <span class="token string">"Provide a pattern"</span>
 
     <span class="token keyword">let</span> <span class="token hvariable">pattern</span> <span class="token operator">=</span> <span class="token builtin">head</span> <span class="token hvariable">args</span>
 
@@ -203,6 +208,22 @@ $ hoogle generate
 <li><code>$ hoogle 'getArgs'</code> will find us <code>getArgs</code> from <code>System.Environment</code></li>
 <li><code>$ hoogle 'Map a b -&gt; a -&gt; b'</code> will realise that we got the parameters in the wrong order for picking values out of a map structure given a key, and give us <code>(!) :: Ord k =&gt; Map k a -&gt; k -&gt; a</code>, so we’ve discovered a new operator from <code>Data.Map.Strict</code> with a guess at a function signature - awesome</li>
 </ul>
+<h2 id="format">Format</h2>
+<p>There are many tools to format Haskell code, and all sorts of configuration options. As this is a guide to getting set up quickly I’ve chosen one: <code>$ stack install brittany</code></p>
+<p>To format your existing code:<br>
+<code>$ brittany --write-mode inplace foo.hs</code></p>
+<h2 id="lint">Lint</h2>
+<p>Linting is a useful way of learning nicer ways to accomplish things with your code - it takes an existing code file and suggests improvements.<br>
+<code>$ stack install hlint apply-refact</code></p>
+<p>To run <code>hlint</code> interactively:<br>
+<code>$ hlint --refactor --refactor-options="-is" foo.hs</code></p>
+<h2 id="tags">Tags</h2>
+<p>This is perhaps not so useful if you’re not using vim or emacs as an editor; it generates a database of “tags” (names used in your code) which allows you to jump to functions in any file in a project - in our case there’s just one, but it can still be useful if your script is large.</p>
+<p>I opted for <code>fast-tags</code> because it’s useful that it has its own parser, so it can still generate tags even if your Haskell script is not compiling right now:</p>
+<p><code>$ stack install fast-tags</code></p>
+<p>Generate tags with:</p>
+<p><code>$ fast-tags -R</code> for a whole directory tree or<br>
+<code>$ fast-tags foo.hs</code> for a single file</p>
 <h2 id="a-final-note">A final note</h2>
 <p>Because I’m lazy and forgetful I use <a href="https://raw.githubusercontent.com/ahri/dotfiles/master/bin/hs-script">a script</a> to help me out with this stuff - it’s only available in shell script for now, but I plan to dogfood it by writing it in a self-contained Haskell script, which will enable me to use it on Windows, too.</p>
 <h3 id="thanks">Thanks</h3>

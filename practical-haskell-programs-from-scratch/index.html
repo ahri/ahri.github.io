@@ -170,7 +170,7 @@ Exit: 0
 <li>Use that exact command with <code>ghcid</code></li>
 </ol>
 <p>So let’s use the above command with <code>ghcid</code> - fire up a new terminal window and run this:<br>
-<code>$ ghcid -c 'stack ghci --resolver lts-12.9 --package regex-posix grep.hs'</code></p>
+<code>$ ghcid -c "stack ghci --resolver lts-12.9 --package regex-posix grep.hs"</code></p>
 <p>That will sit there checking your code compiles and giving you error output - try breaking your program; when you save <code>ghcid</code> will re-check it. Nice.</p>
 <h2 id="compilation">Compilation</h2>
 <p>You probably noticed that running <code>stack grep.hs</code> is a bit slow as it compiles the program before running each time. To avoid this we can compile to native code:</p>

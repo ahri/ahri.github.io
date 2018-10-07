@@ -53,15 +53,8 @@
 <p>Here, I will supply what I consider to be the fastest way to get up and running with Haskell - it’s opinionated, and I’m sure you’ll want to tweak and improve on it as you learn more and form your own opinions and tastes, but it’s a straightforward start. I will keep it updated with what I consider to be the state of the art.</p>
 <p>One of the early problems newcomers to the community encounter is how to lay out a project; Where do the files go? How do I declare my dependencies? Stack? Cabal? Nix? To combat this paralysis without forcing you down a specific route I’m opting to help you write self-contained Haskell scripts. We’ll use Stack as a package manager for compilers and libraries alike.</p>
 <h2 id="install-basic-requirements">Install basic requirements</h2>
-<p>So let’s get going! Note that we’ll be doing a lot in the terminal (or a Command/PowerShell window) and that the commands you need to run are signified by a dollar sign followed by the command to copy/paste - you don’t need to copy the dollar sign too! First we need stack <em>(note: ignore the dollar symbol)</em>:<br>
-Linux/Mac: in a terminal <code>$ sudo apt install haskell-stack</code><br>
-Mac: in a terminal <code>$ sudo brew install haskell-stack</code><br>
-Windows: <a href="https://get.haskellstack.org/stable/windows-x86_64-installer.exe">installer</a> <em>- it’s also available on <a href="https://scoop.sh/">Scoop</a>, if you like package managers</em></p>
-<p>Failing that, follow the <a href="https://docs.haskellstack.org/en/stable/README/#how-to-install">Stack installation instructions</a>.</p>
-<p>Great, now in a terminal let’s update - if the following command doesn’t work, try restarting your terminal program:</p>
-<pre><code>$ stack upgrade
-$ stack --version
-</code></pre>
+<p>So let’s get going! Note that we’ll be doing a lot in the terminal (or a Command/PowerShell window) and that the commands you need to run are signified by a dollar sign followed by the command to copy/paste - you don’t need to copy the dollar sign too! First we need Stack, follow the <a href="https://docs.haskellstack.org/en/stable/README/#how-to-install">Stack installation instructions</a>. If you already have Stack installed, make sure it’s up-to-date via <code>$ stack upgrade</code></p>
+<p>Great, now in a terminal let’s check the version - if the following command doesn’t work, try restarting your terminal program <code>$ stack --version</code>.</p>
 <p>Verify that your version of Stack is now at <strong>1.7.1</strong> or above; if not you may need to fix your PATH in accordance with the location of the executable following the <code>stack upgrade</code> command. On Mac/Linux this likely means adding <code>$HOME/.local/bin</code> to the start of your PATH, and similarly on Windows by adding <code>%USERPROFILE%\AppData\Roaming\local\bin</code> to the start of your <strong>System</strong> (not User) PATH, then restarting your terminal (and maybe your computer).</p>
 <h2 id="write-a-program">Write a program</h2>
 <p>Now, let’s write a Haskell program. Fire up an editor of your choice (yep; Notepad will do fine) and paste in the following, noting that using tabs is a bad idea in Haskell - always indent with spaces, then save it somewhere you’ll be able to access from the terminal as “<code>first_haskell_program.hs</code>”:</p>

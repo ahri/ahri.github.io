@@ -130,7 +130,7 @@ Exit: 0
 Exit: 1
 &gt; echo yep | stack grep.hs ^y &amp; echo Exit: %errorlevel%
 yep
-Exit: 1
+Exit: 0
 </code></pre>
 <p>We’re testing the program here by sending in a single line using <code>echo</code> that’s being checked against the pattern <code>^y</code> which is a regex requiring that the input start with a “y” - you can check this behaviour against <code>egrep</code> (since we’re using regex-posix; use regex-compat for something more similar to <code>grep</code>) if you have it available on your system.</p>
 <h2 id="a-repl-read-evaluate-print-loop">A “REPL”; read-evaluate-print-loop</h2>

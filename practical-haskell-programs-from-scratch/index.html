@@ -28,6 +28,7 @@
 <li><a href="#lint">Lint</a></li>
 <li><a href="#tags">Tags</a></li>
 <li><a href="#formulation">Formulation</a></li>
+<li><a href="#other-resources">Other resources</a></li>
 </ul>
 </li>
 </ul>
@@ -231,8 +232,14 @@ $ hoogle generate
 <h2 id="formulation">Formulation</h2>
 <p>Of course I use <a href="https://raw.githubusercontent.com/ahri/dotfiles/master/bin/hs-script.hs">a script</a> to help me out with this stuff as I’m likely to forget these neat features. It’s a self-contained Haskell script that removes the need to specify LTS and package lists every time, and of course it works on multiple platforms! It also serves as a concrete example of a script converted <a href="https://github.com/ahri/dotfiles/commit/7533605387b1149a7eb03eca897e199a817aead6">from Bash to Haskell</a>.</p>
 <p>Another example is a script to <a href="https://github.com/ahri/random-game">pick random Steam games</a> which I converted from Python to Haskell and is interesting as it accesses the Windows registry or the filesystem depending on which platform it’s running on thereby highlighting the practical functionality Haskell offers in these cases.</p>
+<h2 id="other-resources">Other resources</h2>
+<p><a href="https://github.com/Gabriel439/Haskell-Turtle-Library">Turtle</a> is a very interesting library that eases the way from Bash to Haskell, making scripting really accessible, it also has a really nice <a href="https://hackage.haskell.org/package/turtle-1.5.12/docs/Turtle-Tutorial.html">tutorial</a> making it very easy to get started with.</p>
+<p><a href="https://hackage.haskell.org/package/shelly">Shelly</a> is more of a departure from Bash, but adds plenty of convenience to dealing with processes, files and directories.</p>
 <h3 id="thanks">Thanks</h3>
-<p><a href="https://www.chris-bacon.co.uk/">Chris Bacon</a> - for editing and ideas</p>
+<ul>
+<li><a href="https://www.chris-bacon.co.uk/">Chris Bacon</a> - for editing and ideas</li>
+<li><a href="https://www.reddit.com/r/haskell/comments/9nbzla/replacing_bash_scripts_with_crossplatform_haskell/e7lbscb">/u/statistologist</a> for the suggestion to include Turtle and Shelly</li>
+</ul>
 <h3 id="contact">Contact</h3>
 <p>All comments, corrections and suggestions welcome via <a href="adam@ahri.net">email</a> or on <a href="https://www.reddit.com/r/haskell/comments/9nbzla/replacing_bash_scripts_with_crossplatform_haskell/">reddit</a>.</p>
 

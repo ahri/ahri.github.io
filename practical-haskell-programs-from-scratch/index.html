@@ -229,9 +229,12 @@ $ hoogle generate
 <p><code>$ fast-tags -R</code> for a whole directory tree or<br>
 <code>$ fast-tags foo.hs</code> for a single file</p>
 <h2 id="formulation">Formulation</h2>
-<p>Because I’m lazy and forgetful I use <a href="https://raw.githubusercontent.com/ahri/dotfiles/master/bin/hs-script.hs">a script</a> to help me out with this stuff - it’s a self-contained Haskell script, which enables multi-platform usage!</p>
+<p>Of course I use <a href="https://raw.githubusercontent.com/ahri/dotfiles/master/bin/hs-script.hs">a script</a> to help me out with this stuff as I’m likely to forget these neat features. It’s a self-contained Haskell script that removes the need to specify LTS and package lists every time, and of course it works on multiple platforms! It also serves as a concrete example of a script converted <a href="https://github.com/ahri/dotfiles/commit/7533605387b1149a7eb03eca897e199a817aead6">from Bash to Haskell</a>.</p>
+<p>Another example is a script to <a href="https://github.com/ahri/random-game">pick random Steam games</a> which I converted from Python to Haskell and is interesting as it accesses the Windows registry or the filesystem depending on which platform it’s running on thereby highlighting the practical functionality Haskell offers in these cases.</p>
 <h3 id="thanks">Thanks</h3>
 <p><a href="https://www.chris-bacon.co.uk/">Chris Bacon</a> - for editing and ideas</p>
+<h3 id="contact">Contact</h3>
+<p>All comments, corrections and suggestions welcome via <a href="adam@ahri.net">email</a> or on <a href="https://www.reddit.com/r/haskell/comments/9nbzla/replacing_bash_scripts_with_crossplatform_haskell/">reddit</a>.</p>
 
     </div>
   </div>
